@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MolldSIM - Toate abonamentele într-un singur loc</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <div class="logo-container">
+        <div class="logo-icon"></div>
+        <div class="logo-text">MolldSIM</div>
+      </div>
+      <nav>
+        <a href="#abonamente">Abonamente</a>
+        <a href="#faq">Întrebări</a>
+      </nav>
+      <!-- <button class="btn-primary header-cta">Alege un plan</button> -->
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-content">
+      <a href="#abonamente" class="mobile-menu-link" onclick="toggleMenu()">Abonamente</a>
+      <a href="#faq" class="mobile-menu-link" onclick="toggleMenu()">Întrebări</a>
+      <!-- <a href="#" class="mobile-menu-button" onclick="toggleMenu()">Alege un plan</a> -->
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <div>
+        <h1>Toate abonamentele, <span class="hero-highlight">într-un singur loc</span>.</h1>
+        <p>MolldSIM te ajută să compari rapid abonamente la telefonie mobilă, internet și Internet + TV — simplu, clar și prietenos.</p>
+        <div class="hero-buttons">
+          <a href="#abonamente" class="btn-primary btn-large">Vezi planurile
+              <!-- <button class="btn-primary btn-large">Vezi planurile</button> -->
+          </a>
+          <button class="btn-outline btn-large">Cum funcționează</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Abonamente -->
+  <section id="abonamente" class="container" style="padding: 3rem 1rem;">
+    <!-- Telefonie mobilă -->
+    <div>
+      <div class="section-header">
+        <p class="kicker">Telefonie mobilă</p>
+        <h2 class="section-title">Alege operatorul, găsește planul</h2>
+        <p class="section-subtitle">Compară traficul de date, minutele și beneficiile incluse.</p>
+      </div>
+
+      <div class="tabs-container">
+        <div class="tabs">
+          <button class="tab-button active" onclick="switchMobilTab('orange')">Orange</button>
+          <button class="tab-button" onclick="switchMobilTab('moldcell')">Moldcell</button>
+        </div>
+      </div>
+
+      <div class="plans-grid" id="mobilPlans">
+        <div class="plan-card">
+          <span class="badge">Recomandat</span>
+          <h4 class="plan-name">Start</h4>
+          <div class="plan-price-container">
+            <span class="plan-price">95 MDL</span>
+            <span class="plan-period">/ lună</span>
+          </div>
+          <ul class="plan-features">
+            <li>📶 Internet mobil: <strong>10 GB</strong></li>
+            <li>📞 Minute naționale: <strong>200</strong></li>
+          </ul>
+          <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+          <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
+        </div>
+
+        <div class="plan-card highlight">
+          <h4 class="plan-name">Smart</h4>
+          <div class="plan-price-container">
+            <span class="plan-price">150 MDL</span>
+            <span class="plan-period">/ lună</span>
+          </div>
+          <ul class="plan-features">
+            <li>📶 Internet mobil: <strong>25 GB</strong></li>
+            <li>📞 Minute naționale: <strong>nelimitat</strong></li>
+          </ul>
+          <button class="plan-button" style="background: var(--orange);">Alege acest plan</button>
+          <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
+        </div>
+
+        <div class="plan-card">
+          <h4 class="plan-name">Max</h4>
+          <div class="plan-price-container">
+            <span class="plan-price">220 MDL</span>
+            <span class="plan-period">/ lună</span>
+          </div>
+          <ul class="plan-features">
+            <li>📶 Internet mobil: <strong>50 GB</strong></li>
+            <li>📞 Minute naționale: <strong>nelimitat</strong></li>
+          </ul>
+          <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+          <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Internet -->
+    <div style="margin-top: 4rem;">
+      <div class="section-header">
+        <p class="kicker">Internet</p>
+        <h2 class="section-title">Stabil, rapid și la preț corect</h2>
+        <p class="section-subtitle">Selectează furnizorul și vezi vitezele disponibile la adresa ta.</p>
+      </div>
+
+      <div class="tabs-container">
+        <div class="tabs">
+          <button class="tab-button active" onclick="switchInternetTab('starnet')">StarNet</button>
+          <button class="tab-button" onclick="switchInternetTab('orange')">Orange</button>
+          <button class="tab-button" onclick="switchInternetTab('moldtelecom')">Moldtelecom</button>
+        </div>
+      </div>
+
+      <div class="plans-grid" id="internetPlans">
+        <div class="plan-card">
+          <span class="badge">Recomandat</span>
+          <h4 class="plan-name">Fiber 200</h4>
+          <div class="plan-price-container">
+            <span class="plan-price">149 MDL</span>
+            <span class="plan-period">/ lună</span>
+          </div>
+          <ul class="plan-features">
+            <li>⚡ Viteză internet: <strong>200 Mbps</strong></li>
+          </ul>
+          <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+          <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
+        </div>
+
+        <div class="plan-card highlight">
+          <h4 class="plan-name">Fiber 500</h4>
+          <div class="plan-price-container">
+            <span class="plan-price">199 MDL</span>
+            <span class="plan-period">/ lună</span>
+          </div>
+          <ul class="plan-features">
+            <li>⚡ Viteză internet: <strong>500 Mbps</strong></li>
+          </ul>
+          <button class="plan-button" style="background: var(--orange);">Alege acest plan</button>
+          <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
+        </div>
+
+        <div class="plan-card">
+          <h4 class="plan-name">Fiber 1000</h4>
+          <div class="plan-price-container">
+            <span class="plan-price">249 MDL</span>
+            <span class="plan-period">/ lună</span>
+          </div>
+          <ul class="plan-features">
+            <li>⚡ Viteză internet: <strong>1 Gbps</strong></li>
+          </ul>
+          <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+          <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Internet + TV -->
+    <div style="margin-top: 4rem;">
+      <div class="section-header">
+        <p class="kicker">Internet + TV</p>
+        <h2 class="section-title">Canale și viteză pentru toată familia</h2>
+        <p class="section-subtitle">Alege pachetul complet care ți se potrivește.</p>
+      </div>
+
+      <div class="tabs-container">
+        <div class="tabs">
+          <button class="tab-button active" onclick="switchBundleTab('moldtelecom')">Moldtelecom</button>
+          <button class="tab-button" onclick="switchBundleTab('starnet')">StarNet</button>
+          <button class="tab-button" onclick="switchBundleTab('orange')">Orange</button>
+        </div>
+      </div>
+
+      <div class="plans-grid" id="bundlePlans">
+        <div class="plan-card">
+          <h4 class="plan-name">TV Start + 200</h4>
+          <div class="plan-price-container">
+            <span class="plan-price">199 MDL</span>
+            <span class="plan-period">/ lună</span>
+          </div>
+          <ul class="plan-features">
+            <li>⚡ Viteză internet: <strong>200 Mbps</strong></li>
+            <li>📺 Canale TV: <strong>60+</strong></li>
+          </ul>
+          <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+          <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
+        </div>
+
+        <div class="plan-card highlight">
+          <h4 class="plan-name">TV Plus + 500</h4>
+          <div class="plan-price-container">
+            <span class="plan-price">259 MDL</span>
+            <span class="plan-period">/ lună</span>
+          </div>
+          <ul class="plan-features">
+            <li>⚡ Viteză internet: <strong>500 Mbps</strong></li>
+            <li>📺 Canale TV: <strong>120+</strong></li>
+          </ul>
+          <button class="plan-button" style="background: var(--orange);">Alege acest plan</button>
+          <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
+        </div>
+
+        <div class="plan-card">
+          <h4 class="plan-name">TV Max + 1000</h4>
+          <div class="plan-price-container">
+            <span class="plan-price">309 MDL</span>
+            <span class="plan-period">/ lună</span>
+          </div>
+          <ul class="plan-features">
+            <li>⚡ Viteză internet: <strong>1 Gbps</strong></li>
+            <li>📺 Canale TV: <strong>170+</strong></li>
+          </ul>
+          <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+          <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq-container">
+    <div class="section-header">
+      <p class="kicker">Întrebări frecvente</p>
+      <h2 class="section-title">Tot ce vrei să știi</h2>
+      <p class="section-subtitle">Dacă ai altă întrebare, scrie-ne și te ajutăm rapid.</p>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-question">
+          Cum funcționează MolldSIM?
+          <span class="faq-toggle">+</span>
+        </summary>
+        <div class="faq-answer">Navighezi pe secțiuni (Mobil, Internet, Internet + TV), alegi operatorul din tab-uri și compari planurile.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          Prețurile sunt finale?
+          <span class="faq-toggle">+</span>
+        </summary>
+        <div class="faq-answer">Sunt orientative. Pot varia în funcție de promoții, echipamente sau adresă.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          Pot activa direct un abonament?
+          <span class="faq-toggle">+</span>
+        </summary>
+        <div class="faq-answer">Îți arătăm opțiunile și te ghidăm către furnizorul ales pentru activare.</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Callout -->
+  <section class="callout">
+    <div class="callout-content">
+      <h3>Gata să-ți găsești abonamentul perfect?</h3>
+      <p>Câteva clicuri și ești pe drumul cel bun.</p>
+      <button class="callout-button">Alege un plan</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>MolldSIM</h4>
+        <p>Compară abonamente simplu și prietenos.</p>
+      </div>
+      <div class="footer-section">
+        <h4 style="font-size: 0.875rem; font-weight: 600;">Secțiuni</h4>
+        <ul>
+          <li>Telefonie mobilă</li>
+          <li>Internet</li>
+          <li>Internet + TV</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 style="font-size: 0.875rem; font-weight: 600;">Legal</h4>
+        <ul>
+          <li>Termeni & condiții</li>
+          <li>Confidențialitate</li>
+          <li>Cookie-uri</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 style="font-size: 0.875rem; font-weight: 600;">Contact</h4>
+        <ul>
+          <li>hello@molldsim.md</li>
+          <li>+373 (xxx) xxx xxx</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copyright">© 2025 MolldSIM. Toate drepturile rezervate.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html
