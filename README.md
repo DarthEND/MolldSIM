@@ -17,7 +17,6 @@ Scopul proiectului este de a ajuta utilizatorii să compare ușor ofertele și s
 ## 🧠 Tehnologii utilizate
 - **HTML5 / CSS3**
 - **JavaScript** pentru taburi interactive
-- *(Versiunea anterioară folosea React + Tailwind)*
 
 ---
 
