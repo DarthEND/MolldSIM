@@ -107,100 +107,107 @@
   </section>
 
   <!-- Telefonie Mobilă Section -->
-  <section id="telefonie" class="mobile-section">
-    <!-- Prepay -->
-    <div class="subsection">
-      <div class="container">
-        <div id="prepay" class="section-header">
-          <p class="kicker">Telefonie mobilă Prepay</p>
-          <h2 class="section-title">Alege operatorul, găsește planul</h2>
-          <p class="section-subtitle">Compară traficul de date, minutele și beneficiile incluse.</p>
-        </div>
-
-        <div class="tabs-container">
-          <div class="tabs prepayTabs">
-            <button class="tab-button active" onclick="switchMobilTabPrepay('orange')">Orange</button>
-            <button class="tab-button" onclick="switchMobilTabPrepay('moldcell')">Moldcell</button>
-            <button class="tab-button" onclick="switchMobilTabPrepay('unite')">Unite</button>
+  <section id="telefonie">
+    <section id="prepay" class="mobile-section">
+      <!-- Prepay -->
+      <div class="subsection">
+        <div class="container">
+          <div class="section-header">
+            <p class="kicker">Telefonie mobilă Prepay</p>
+            <h2 class="section-title">Alege operatorul, găsește planul</h2>
+            <p class="section-subtitle">Compară traficul de date, minutele și beneficiile incluse.</p>
+          </div>
+  
+          <div class="tabs-container">
+            <div class="tabs prepayTabs">
+              <button class="tab-button active" onclick="switchMobilTabPrepay('orange')">Orange</button>
+              <button class="tab-button" onclick="switchMobilTabPrepay('moldcell')">Moldcell</button>
+              <button class="tab-button" onclick="switchMobilTabPrepay('moldtelecom')">Moldtelecom</button>
+            </div>
+          </div>
+  
+          <div class="plans-grid" id="mobilPlansPrepay">
+                    
           </div>
         </div>
-
-        <div class="plans-grid" id="mobilPlansPrepay">
-                  
-        </div>
       </div>
-    </div>
-    <!-- Abonamente -->
-    <div class="subsection">
-      <div class="container">
-        <div id="abonamente" class="section-header">
-          <p class="kicker">Telefonie mobilă Abonament</p>
-          <h2 class="section-title">Alege operatorul, găsește planul</h2>
-          <p class="section-subtitle">Compară traficul de date, minutele și beneficiile incluse.</p>
-        </div>
-
-        <div class="tabs-container">
-          <div class="tabs abonamenteTabs">
-            <button class="tab-button active" onclick="switchMobilTabAbonament('orange')">Orange</button>
-            <button class="tab-button" onclick="switchMobilTabAbonament('moldcell')">Moldcell</button>
-            <button class="tab-button" onclick="switchMobilTabAbonament('unite')">Unite</button>
+    </section>
+    <section id="abonamente" class="mobile-section">
+      <!-- Abonamente -->
+      <div class="subsection">
+        <div class="container">
+          <div id="abonamente" class="section-header">
+            <p class="kicker">Telefonie mobilă Abonament</p>
+            <h2 class="section-title">Alege operatorul, găsește planul</h2>
+            <p class="section-subtitle">Compară traficul de date, minutele și beneficiile incluse.</p>
+          </div>
+  
+          <div class="tabs-container">
+            <div class="tabs abonamenteTabs">
+              <button class="tab-button active" onclick="switchMobilTabAbonament('orange')">Orange</button>
+              <button class="tab-button" onclick="switchMobilTabAbonament('moldcell')">Moldcell</button>
+              <button class="tab-button" onclick="switchMobilTabAbonament('moldtelecom')">Moldtelecom</button>
+            </div>
+          </div>
+  
+          <div class="plans-grid" id="mobilPlansAbonament">
+            
           </div>
         </div>
-
-        <div class="plans-grid" id="mobilPlansAbonament">
-          
-        </div>
       </div>
-    </div>
+    </section>
   </section>
 
   <!-- Internet Section -->
-  <section id="internet" class="internet-section">
-    <!-- Internet -->
-    <div class="subsection">
-      <div class="container">
-        <div id="internet" class="section-header">
-          <p class="kicker">Internet</p>
-          <h2 class="section-title">Stabil, rapid și la preț corect</h2>
-          <p class="section-subtitle">Selectează furnizorul și vezi vitezele disponibile la adresa ta.</p>
-        </div>
-
-        <div class="tabs-container">
-          <div class="tabs internetTabs">
-            <button class="tab-button active" onclick="switchInternetTab('starnet')">StarNet</button>
-            <button class="tab-button" onclick="switchInternetTab('orange')">Orange</button>
-            <button class="tab-button" onclick="switchInternetTab('moldtelecom')">Moldtelecom</button>
+  <section class="internet-section">
+    <section id="internet" class="internet-section">
+      <!-- Internet -->
+      <div class="subsection">
+        <div class="container">
+          <div id="internet" class="section-header">
+            <p class="kicker">Internet</p>
+            <h2 class="section-title">Stabil, rapid și la preț corect</h2>
+            <p class="section-subtitle">Selectează furnizorul și vezi vitezele disponibile la adresa ta.</p>
+          </div>
+  
+          <div class="tabs-container">
+            <div class="tabs internetTabs">
+              <button class="tab-button active" onclick="switchInternetTab('starnet')">StarNet</button>
+              <button class="tab-button" onclick="switchInternetTab('orange')">Orange</button>
+              <button class="tab-button" onclick="switchInternetTab('moldtelecom')">Moldtelecom</button>
+            </div>
+          </div>
+  
+          <div class="plans-grid" id="internetPlans">
+            
           </div>
         </div>
-
-        <div class="plans-grid" id="internetPlans">
+      </div>
+    </section>
+    <section id="internet_tv" class="internet-section">
+      <!-- Internet + TV -->
+      <div class="subsection">
+        <div class="container">
+          <div id="internet_tv" class="section-header">
+            <p class="kicker">Internet + TV</p>
+            <h2 class="section-title">Canale și viteză pentru toată familia</h2>
+            <p class="section-subtitle">Alege pachetul complet care ți se potrivește.</p>
+          </div>
+  
+          <div class="tabs-container">
+            <div class="tabs bundleTabs">
+              <button class="tab-button active" onclick="switchBundleTab('starnet')">StarNet</button>
+              <button class="tab-button" onclick="switchBundleTab('moldtelecom')">Moldtelecom</button>
+              <button class="tab-button" onclick="switchBundleTab('orange')">Orange</button>
+            </div>
+          </div>
+  
+          <div class="plans-grid" id="bundlePlans">
           
-        </div>
-      </div>
-    </div>
-
-    <!-- Internet + TV -->
-    <div class="subsection">
-      <div class="container">
-        <div id="internet_tv" class="section-header">
-          <p class="kicker">Internet + TV</p>
-          <h2 class="section-title">Canale și viteză pentru toată familia</h2>
-          <p class="section-subtitle">Alege pachetul complet care ți se potrivește.</p>
-        </div>
-
-        <div class="tabs-container">
-          <div class="tabs bundleTabs">
-            <button class="tab-button active" onclick="switchBundleTab('starnet')">StarNet</button>
-            <button class="tab-button" onclick="switchBundleTab('moldtelecom')">Moldtelecom</button>
-            <button class="tab-button" onclick="switchBundleTab('orange')">Orange</button>
           </div>
         </div>
-
-        <div class="plans-grid" id="bundlePlans">
-        
-        </div>
       </div>
-    </div>
+    </section>
   </section>
     
 
