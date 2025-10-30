@@ -295,37 +295,40 @@ function toggleMenu() {
       `,
       orange: `
         <div class="plan-card">
-          <h4 class="plan-name">Home 100</h4>
+          <h4 class="plan-name">Fibră OPTIM</h4>
           <div class="plan-price-container">
-            <span class="plan-price">139 MDL</span>
+            <span class="plan-price">200 MDL</span>
             <span class="plan-period">/ lună</span>
           </div>
           <ul class="plan-features">
-            <li>⚡ Viteză internet: <strong>100 Mbps</strong></li>
+            <li>⚡ Viteză internet: <strong>500 Mbps</strong></li>
+            <li>⚡ Router: <strong>Router Wi-Fi 6</strong></li>
           </ul>
           <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
           <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
         </div>
         <div class="plan-card highlight">
-          <h4 class="plan-name">Home 300</h4>
+          <h4 class="plan-name">Fibră ULTRA</h4>
           <div class="plan-price-container">
-            <span class="plan-price">179 MDL</span>
+            <span class="plan-price">250 MDL</span>
             <span class="plan-period">/ lună</span>
           </div>
           <ul class="plan-features">
-            <li>⚡ Viteză internet: <strong>300 Mbps</strong></li>
+            <li>⚡ Viteză internet: <strong>940 Mbps</strong></li>
+            <li>⚡ Router: <strong>Router Wi-Fi 6</strong></li>
           </ul>
           <button class="plan-button" style="background: var(--orange);">Alege acest plan</button>
           <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
         </div>
         <div class="plan-card">
-          <h4 class="plan-name">Home 1000</h4>
+          <h4 class="plan-name">Fibră ULTRA FTTR</h4>
           <div class="plan-price-container">
-            <span class="plan-price">239 MDL</span>
+            <span class="plan-price">450 MDL</span>
             <span class="plan-period">/ lună</span>
           </div>
           <ul class="plan-features">
-            <li>⚡ Viteză internet: <strong>1 Gbps</strong></li>
+            <li>⚡ Viteză internet: <strong>2.2 Gbps</strong></li>
+            <li>⚡ Router: <strong>Router Wi-Fi 7</strong></li>
           </ul>
           <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
           <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
@@ -460,18 +463,19 @@ function toggleMenu() {
       `,
       orange: `
         <div class="plan-card">
-          <h4 class="plan-name">TV S + 100</h4>
+          <h4 class="plan-name">Fibră + TV OPTIM</h4>
           <div class="plan-price-container">
-            <span class="plan-price">195 MDL</span>
+            <span class="plan-price">190 MDL</span>
             <span class="plan-period">/ lună</span>
           </div>
           <ul class="plan-features">
-            <li>⚡ Viteză internet: <strong>100 Mbps</strong></li>
-            <li>📺 Canale TV: <strong>70+</strong></li>
+            <li>⚡ Viteză internet: <strong>500 Mbps</strong></li>
+            <li>📺 Canale TV: <strong>158</strong></li>
           </ul>
           <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
           <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
         </div>
+
         <div class="plan-card highlight">
           <h4 class="plan-name">TV M + 300</h4>
           <div class="plan-price-container">
@@ -485,6 +489,21 @@ function toggleMenu() {
           <button class="plan-button" style="background: var(--orange);">Alege acest plan</button>
           <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
         </div>
+
+        <div class="plan-card">
+          <h4 class="plan-name">TV L + 1000</h4>
+          <div class="plan-price-container">
+            <span class="plan-price">295 MDL</span>
+            <span class="plan-period">/ lună</span>
+          </div>
+          <ul class="plan-features">
+            <li>⚡ Viteză internet: <strong>1 Gbps</strong></li>
+            <li>📺 Canale TV: <strong>180+</strong></li>
+          </ul>
+          <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+          <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
+        </div>
+
         <div class="plan-card">
           <h4 class="plan-name">TV L + 1000</h4>
           <div class="plan-price-container">

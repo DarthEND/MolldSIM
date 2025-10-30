@@ -16,10 +16,10 @@
         <div class="logo-text">MolldSIM</div>
       </div>
       <nav>
-        <a href="#abonamente">Prepay</a>
+        <a href="#prepay">Prepay</a>
         <a href="#abonamente">Abonament</a>
-        <a href="#abonamente">Internet</a>
-        <a href="#abonamente">Internet+TV</a>
+        <a href="#internet">Internet</a>
+        <a href="#internet_tv">Internet+TV</a>
         <a href="#faq">Întrebări</a>
       </nav>
       <!-- <button class="btn-primary header-cta">Alege un plan</button> -->
@@ -34,10 +34,10 @@
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
     <div class="mobile-menu-content">
-      <a href="#abonamente" class="mobile-menu-link" onclick="toggleMenu()">Prepay</a>
+      <a href="#prepay" class="mobile-menu-link" onclick="toggleMenu()">Prepay</a>
       <a href="#abonamente" class="mobile-menu-link" onclick="toggleMenu()">Abonamente</a>
-      <a href="#abonamente" class="mobile-menu-link" onclick="toggleMenu()">Internet</a>
-      <a href="#abonamente" class="mobile-menu-link" onclick="toggleMenu()">Internet+TV</a>
+      <a href="#internet" class="mobile-menu-link" onclick="toggleMenu()">Internet</a>
+      <a href="#internet_tv" class="mobile-menu-link" onclick="toggleMenu()">Internet+TV</a>
       <a href="#faq" class="mobile-menu-link" onclick="toggleMenu()">Întrebări</a>
       <!-- <a href="#" class="mobile-menu-button" onclick="toggleMenu()">Alege un plan</a> -->
     </div>
@@ -50,7 +50,7 @@
         <h1>Toate abonamentele, <span class="hero-highlight">într-un singur loc</span>.</h1>
         <p>MolldSIM te ajută să compari rapid abonamente la telefonie mobilă, internet și Internet + TV — simplu, clar și prietenos.</p>
         <div class="hero-buttons">
-          <a href="#abonamente" class="btn-primary btn-large">Vezi planurile
+          <a href="#telefonie" class="btn-primary btn-large">Vezi planurile
               <!-- <button class="btn-primary btn-large">Vezi planurile</button> -->
           </a>
           <a href="#cum-functioneaza" class="btn-outline btn-large">Cum funcționează</a>
@@ -111,7 +111,7 @@
     <!-- Prepay -->
     <div class="subsection">
       <div class="container">
-        <div class="section-header">
+        <div id="prepay" class="section-header">
           <p class="kicker">Telefonie mobilă Prepay</p>
           <h2 class="section-title">Alege operatorul, găsește planul</h2>
           <p class="section-subtitle">Compară traficul de date, minutele și beneficiile incluse.</p>
@@ -133,7 +133,7 @@
     <!-- Abonamente -->
     <div class="subsection">
       <div class="container">
-        <div class="section-header">
+        <div id="abonamente" class="section-header">
           <p class="kicker">Telefonie mobilă Abonament</p>
           <h2 class="section-title">Alege operatorul, găsește planul</h2>
           <p class="section-subtitle">Compară traficul de date, minutele și beneficiile incluse.</p>
@@ -159,7 +159,7 @@
     <!-- Internet -->
     <div class="subsection">
       <div class="container">
-        <div class="section-header">
+        <div id="internet" class="section-header">
           <p class="kicker">Internet</p>
           <h2 class="section-title">Stabil, rapid și la preț corect</h2>
           <p class="section-subtitle">Selectează furnizorul și vezi vitezele disponibile la adresa ta.</p>
@@ -182,7 +182,7 @@
     <!-- Internet + TV -->
     <div class="subsection">
       <div class="container">
-        <div class="section-header">
+        <div id="internet_tv" class="section-header">
           <p class="kicker">Internet + TV</p>
           <h2 class="section-title">Canale și viteză pentru toată familia</h2>
           <p class="section-subtitle">Alege pachetul complet care ți se potrivește.</p>
@@ -258,9 +258,10 @@
       <div class="footer-section">
         <h4 style="font-size: 0.875rem; font-weight: 600;">Secțiuni</h4>
         <ul>
-          <li>Telefonie mobilă</li>
-          <li>Internet</li>
-          <li>Internet + TV</li>
+          <li><a href="#prepay">Prepay</a></li>
+          <li><a href="#abonament">Abonament</a></li>
+          <li><a href="#internet">Internet</a></li>
+          <li><a href="#internet_tv">Internet + TV</a></li>
         </ul>
       </div>
       <div class="footer-section">
