@@ -17,8 +17,7 @@ const mobilPlansPrepay = {
             <li>🌐 Internet: <strong>3 GB</strong></li>
             <li>📞 Minute naționale: <strong>100</strong></li>
         </ul>
-        <a href="https://www.orange.md/ro/prepay/cartela" class="plan-button" style="background: var(--orange, #ff7a00);">Reîncarcă 30</a>
-        <!-- <button class="plan-button" style="background: var(--orange, #ff7a00);">Reîncarcă 30</button> -->
+        <a href="https://www.orange.md/ro/prepay/cartela" target="_blank" class="plan-button orange">Alege acest plan</a>
         <p class="plan-note">Valabile 15 zile.</p>
     </div>
 
@@ -32,8 +31,7 @@ const mobilPlansPrepay = {
             <li>🌐 Internet: <strong>10 GB</strong></li>
             <li>📞 Minute naționale: <strong>250</strong></li>
         </ul>
-        <!-- <button class="plan-button" style="background: var(--orange, #ff7a00);">Reîncarcă 50</button> -->
-        <a href="https://www.orange.md/ro/prepay/cartela" class="plan-button" style="background: var(--orange, #ff7a00);">Reîncarcă 50</a>
+        <a href="https://www.orange.md/ro/prepay/cartela" target="_blank" class="plan-button orange">Alege acest plan</a>
         <p class="plan-note">Valabile 15 zile.</p>
     </div>
 
@@ -47,8 +45,7 @@ const mobilPlansPrepay = {
             <li>🌐 Internet: <strong>15 GB</strong></li>
             <li>📞 Minute naționale: <strong>500</strong></li>
         </ul>
-        <!-- <button class="plan-button" style="background: var(--orange, #ff7a00);">Reîncarcă 60</button> -->
-        <a href="https://www.orange.md/ro/prepay/cartela" class="plan-button" style="background: var(--orange, #ff7a00);">Reîncarcă 60</a>
+        <a href="https://www.orange.md/ro/prepay/cartela" target="_blank" class="plan-button orange">Alege acest plan</a>
         <p class="plan-note">Valabile 15 zile.</p>
     </div>
 
@@ -62,8 +59,7 @@ const mobilPlansPrepay = {
             <li>🌐 Internet: <strong>100 GB</strong></li>
             <li>📞 Minute naționale: <strong>500</strong></li>
         </ul>
-        <!-- <button class="plan-button" style="background: var(--orange, #ff7a00);">Reîncarcă 100</button> -->
-        <a href="https://www.orange.md/ro/prepay/cartela" class="plan-button" style="background: var(--orange, #ff7a00);">Reîncarcă 100</a>
+        <a href="https://www.orange.md/ro/prepay/cartela" target="_blank" class="plan-button orange">Alege acest plan</a>
         <p class="plan-note">Valabile 15 zile.</p>
     </div>
   `,
@@ -78,9 +74,9 @@ const mobilPlansPrepay = {
         <li>🌐 Internet: <strong>25 GB</strong></li>
         <li>📞 Minute naționale: <strong>250</strong></li>
       </ul>
-      <a href="https://eshop.moldcell.md/ro/prepay/e-abonament" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
-      <!-- <button class="plan-button" style="background: var(--purple);">Alege acest plan</button> -->
+      <a href="https://eshop.moldcell.md/ro/prepay/e-abonament" target="_blank" class="plan-button moldcell">Alege acest plan</a>
     </div>
+
     <div class="plan-card">
       <h4 class="plan-name">E-Abonament 80</h4>
       <div class="plan-price-container">
@@ -92,9 +88,9 @@ const mobilPlansPrepay = {
         <li>📞 Minute naționale: <strong>500</strong></li>
         <li>🎁 Bonus de bun venit: <strong>50 GB</strong> la înregistrare</li>
       </ul>
-      <a href="https://eshop.moldcell.md/ro/prepay/e-abonament" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
-      <!-- <button class="plan-button" style="background: var(--purple);">Alege acest plan</button> -->
+      <a href="https://eshop.moldcell.md/ro/prepay/e-abonament" target="_blank" class="plan-button moldcell">Alege acest plan</a>
     </div>
+
     <div class="plan-card">
       <h4 class="plan-name">E-Abonament 100</h4>
       <div class="plan-price-container">
@@ -107,8 +103,7 @@ const mobilPlansPrepay = {
         <li>✈️ Roaming în UE: <strong>1 GB</strong> + <strong>50 minute</strong></li>
         <li>🎁 Bonus de bun venit: <strong>50 GB</strong> la înregistrare</li>
       </ul>
-      <a href="https://eshop.moldcell.md/ro/prepay/e-abonament" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
-      <!-- <button class="plan-button" style="background: var(--purple);">Alege acest plan</button> -->
+      <a href="https://eshop.moldcell.md/ro/prepay/e-abonament" target="_blank" class="plan-button moldcell">Alege acest plan</a>
     </div>
   `,
   moldtelecom: `
@@ -123,7 +118,7 @@ const mobilPlansPrepay = {
             <li>📞 Minute în rețea: <strong>Nelimitat</strong></li>
             <li>📞 Minute naționale: <strong>50</strong></li>
         </ul>
-        <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+        <a href="https://new.moldtelecom.md/ro/prepay" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
         <p class="plan-note">Valabile 14 zile.</p>
     </div>
 
@@ -138,8 +133,7 @@ const mobilPlansPrepay = {
             <li>📞 Minute în rețea: <strong>Nelimitat</strong></li>
             <li>📞 Minute naționale: <strong>200</strong></li>
         </ul>
-        <!-- <button class="plan-button" style="background: var(--purple);">Alege acest plan</button> -->
-        <a href="https://new.moldtelecom.md/ro/prepay" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
+        <a href="https://new.moldtelecom.md/ro/prepay" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
         <p class="plan-note">Valabile 14 zile.</p>
     </div>
 
@@ -154,8 +148,7 @@ const mobilPlansPrepay = {
             <li>📞 Minute în rețea: <strong>Nelimitat</strong></li>
             <li>📞 Minute naționale: <strong>300</strong></li>
         </ul>
-        <a href="https://new.moldtelecom.md/ro/prepay" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
-        <!-- <button class="plan-button" style="background: var(--purple);">Alege acest plan</button> -->
+        <a href="https://new.moldtelecom.md/ro/prepay" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
         <p class="plan-note">Valabile 14 zile.</p>
     </div>
 
@@ -171,8 +164,7 @@ const mobilPlansPrepay = {
             <li>📞♾️ Minute în rețea: <strong>Nelimitat</strong></li>
             <li>📞 Minute naționale: <strong>400</strong></li>
         </ul>
-        <a href="https://new.moldtelecom.md/ro/prepay" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
-        <!-- <button class="plan-button" style="background: var(--purple);">Alege acest plan</button> -->
+        <a href="https://new.moldtelecom.md/ro/prepay" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
         <p class="plan-note">Valabile 14 zile.</p>
     </div>
 
@@ -188,8 +180,7 @@ const mobilPlansPrepay = {
             <li>📞♾️ Minute în rețea: <strong>Nelimitat</strong></li>
             <li>📞 Minute naționale: <strong>500</strong></li>
         </ul>
-        <a href="https://new.moldtelecom.md/ro/prepay" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
-        <!-- <button class="plan-button" style="background: var(--purple);">Alege acest plan</button> -->
+        <a href="https://new.moldtelecom.md/ro/prepay" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
         <p class="plan-note">Valabile 14 zile.</p>
     </div>
 
@@ -205,8 +196,7 @@ const mobilPlansPrepay = {
             <li>📞♾️ Minute în rețea: <strong>Nelimitat</strong></li>
             <li>📞 Minute naționale: <strong>600</strong></li>
         </ul>
-        <a href="https://new.moldtelecom.md/ro/prepay" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
-        <!-- <button class="plan-button" style="background: var(--purple);">Alege acest plan</button> -->
+        <a href="https://new.moldtelecom.md/ro/prepay" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
         <p class="plan-note">Valabile 14 zile.</p>
     </div>
 
@@ -223,8 +213,7 @@ const mobilPlansPrepay = {
             <li>📞 Minute naționale: <strong>600</strong></li>
             <li>📞✈️ Minute Roaming: <strong>50</strong></li>
         </ul>
-        <a href="https://new.moldtelecom.md/ro/prepay" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
-        <!-- <button class="plan-button" style="background: var(--purple);">Alege acest plan</button> -->
+        <a href="https://new.moldtelecom.md/ro/prepay" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
         <p class="plan-note">Valabile 14 zile.</p>
     </div>
   ` 
@@ -234,54 +223,40 @@ const mobilPlansAbonament = {
   orange: `
     <div class="plan-card">
         <h4 class="plan-name">Start 100</h4>
-
         <div class="plan-price-container">
             <span class="plan-price">100 MDL</span>
             <span class="plan-period">/ lunar</span>
         </div>
-
         <ul class="plan-features">
             <li>🌐 Internet: <strong>8 GB + 8 GB</strong> <em>(cu Family)</em></li>
             <li>📞♾️ Apeluri nelimitate: <strong>cu 3 Numere Favorite</strong></li>
             <li>📞 Minute naționale: <strong>200</strong></li>
             <li>🎁 Ofertă la conectare: <strong>2× mai mult Internet</strong> timp de <strong>24 luni</strong></li>
         </ul>
-
-        <a href="https://www.orange.md/ro/abonament" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
-        
-        <!-- <button class="plan-button" style="background: var(--orange, #ff7a00);">
-            Alege acest abonament
-        </button> -->
+        <a href="https://www.orange.md/ro/abonament" target="_blank" class="plan-button orange">Alege acest plan</a>
     </div>
 
     <div class="plan-card">
         <h4 class="plan-name">Max 150</h4>
-
         <div class="plan-price-container">
             <span class="plan-price">105 MDL</span>
             <span class="plan-period">/ lunar</span>
         </div>
-
         <ul class="plan-features">
             <li>🌐 Internet: <strong>15 GB + 15 GB</strong> <em>(cu Family)</em></li>
             <li>📞♾️ Apeluri în rețea: <strong>Nelimitate</strong></li>
             <li>📞 Minute naționale: <strong>450</strong></li>
             <li>🎁 Ofertă la conectare: <strong>2× mai mult Internet</strong> timp de <strong>24 luni</strong></li>
         </ul>
-
-        <button class="plan-button" style="background: var(--orange, #ff7a00);">
-            Alege acest abonament
-        </button>
+        <a href="https://www.orange.md/ro/abonament" target="_blank" class="plan-button orange">Alege acest plan</a>
     </div>
 
     <div class="plan-card">
         <h4 class="plan-name">Max 175</h4>
-
         <div class="plan-price-container">
             <span class="plan-price">122,50 MDL</span>
             <span class="plan-period">/ lunar</span>
         </div>
-
         <ul class="plan-features">
             <li>🌐 Internet: <strong>25 GB + 25 GB</strong> <em>(cu Family)</em></li>
             <li>🌍 Internet în roaming RO: <strong>5,79 GB</strong></li>
@@ -289,21 +264,15 @@ const mobilPlansAbonament = {
             <li>✈️ Minute naționale și roaming RO: <strong>750</strong></li>
             <li>🎁 Ofertă la conectare: <strong>2× mai mult Internet</strong> timp de <strong>24 luni</strong></li>
         </ul>
-
-        <a href="https://www.orange.md/ro/abonament" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
-        <!-- <button class="plan-button" style="background: var(--orange, #ff7a00);">
-            Alege acest abonament
-        </button> -->
+        <a href="https://www.orange.md/ro/abonament" target="_blank" class="plan-button orange">Alege acest plan</a>
     </div>
 
     <div class="plan-card">
         <h4 class="plan-name">Max 200</h4>
-
         <div class="plan-price-container">
             <span class="plan-price">140 lei</span>
             <span class="plan-period">/ lunar</span>
         </div>
-
         <ul class="plan-features">
             <li>🌐 Internet: <strong>60 GB + 60 GB</strong> <em>(cu Family)</em></li>
             <li>🌍 Internet în roaming Europa: <strong>6,62 GB</strong></li>
@@ -311,21 +280,15 @@ const mobilPlansAbonament = {
             <li>✈️ Minute naționale și roaming Europa: <strong>1000</strong></li>
             <li>🎁 Ofertă la conectare: <strong>2× mai mult Internet</strong> timp de <strong>24 luni</strong></li>
         </ul>
-
-        <a href="https://www.orange.md/ro/abonament" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
-        <!-- <button class="plan-button" style="background: var(--orange, #ff7a00);">
-            Alege acest abonament
-        </button> -->
+        <a href="https://www.orange.md/ro/abonament" target="_blank" class="plan-button orange">Alege acest plan</a>
     </div>
 
     <div class="plan-card">
         <h4 class="plan-name">Max 290</h4>
-
         <div class="plan-price-container">
             <span class="plan-price">145 lei</span>
             <span class="plan-period">/ lunar</span>
         </div>
-
         <ul class="plan-features">
             <li>🌐 Internet: <strong>100 GB + 100 GB</strong> <em>(cu Family)</em></li>
             <li>🌍 Internet în roaming Europa: <strong>9,60 GB</strong></li>
@@ -334,21 +297,15 @@ const mobilPlansAbonament = {
             <li>✈️ Roaming alte țări: <strong>30 minute + 500 MB</strong></li>
             <li>🎁 Ofertă la conectare: <strong>2× mai mult Internet</strong> timp de <strong>24 luni</strong></li>
         </ul>
-
-        <a href="https://www.orange.md/ro/abonament" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
-        <!-- <button class="plan-button" style="background: var(--orange, #ff7a00);">
-            Alege acest abonament
-        </button> -->
+        <a href="https://www.orange.md/ro/abonament" target="_blank" class="plan-button orange">Alege acest plan</a>
     </div>
 
     <div class="plan-card">
         <h4 class="plan-name">Max 400</h4>
-
         <div class="plan-price-container">
             <span class="plan-price">400 lei</span>
             <span class="plan-period">/ lunar</span>
         </div>
-
         <ul class="plan-features">
             <li>🌐 Internet: <strong>200 GB + 200 GB</strong> <em>(cu Family)</em></li>
             <li>🌍 Internet în roaming Europa: <strong>13,25 GB</strong></li>
@@ -356,44 +313,31 @@ const mobilPlansAbonament = {
             <li>📞🌎 Minute internaționale: <strong>100</strong></li>
             <li>✈️ Roaming alte țări: <strong>30 minute + 500 MB</strong></li>
         </ul>
-
-        <a href="https://www.orange.md/ro/abonament" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
-        <!-- <button class="plan-button" style="background: var(--orange, #ff7a00);">
-            Alege acest abonament
-        </button> -->
+        <a href="https://www.orange.md/ro/abonament" target="_blank" class="plan-button orange">Alege acest plan</a>
     </div>
   `,
   moldcell: `
     <div class="plan-card">
         <h4 class="plan-name">Mixx 140</h4>
-
         <div class="plan-price-container">
             <span class="plan-price">100 MDL</span>
             <span class="plan-period">/ lună</span>
         </div>
-
         <ul class="plan-features">
             <li>📞♾️ Minute și SMS în rețea: <strong>Nelimitate</strong></li>
             <li>📞 Minute + SMS naționale: <strong>500 min și 100 SMS</strong></li>
             <li>🌐 Internet: <strong>12 GB</strong></li>
             <li>🎁 Opțiuni cadou: <strong>MIXX</strong></li>
         </ul>
-
-        <a href="https://eshop.moldcell.md/ro/abonament/conectare" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
-        
-        <!-- <button class="plan-button" style="background: var(--purple, #a020f0);">
-            Comandă
-        </button> -->
+        <a href="https://eshop.moldcell.md/ro/abonament/conectare" target="_blank" class="plan-button moldcell">Alege acest plan</a>
     </div>
 
     <div class="plan-card">
         <h4 class="plan-name">Mixx 180</h4>
-
         <div class="plan-price-container">
             <span class="plan-price">125 MDL</span>
             <span class="plan-period">/ lună</span>
         </div>
-
         <ul class="plan-features">
             <li>📞♾️ Minute și SMS în rețea: <strong>Nelimitate</strong></li>
             <li>📞 Minute + SMS naționale și roaming RO: <strong>750 min și 100 SMS</strong></li>
@@ -401,20 +345,15 @@ const mobilPlansAbonament = {
             <li>📞🌎 Minute internaționale: <strong>100</strong> (RO + UA)</li>
             <li>🎁 Opțiuni cadou: <strong>MIXX</strong></li>
         </ul>
-        <a href="https://eshop.moldcell.md/ro/abonament/conectare" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
-        <!-- <button class="plan-button" style="background: var(--purple, #a020f0);">
-            Comandă
-        </button> -->
+        <a href="https://eshop.moldcell.md/ro/abonament/conectare" target="_blank" class="plan-button moldcell">Alege acest plan</a>
     </div>
 
     <div class="plan-card">
         <h4 class="plan-name">Mixx 200</h4>
-
         <div class="plan-price-container">
             <span class="plan-price">145 MDL</span>
             <span class="plan-period">/ lună</span>
         </div>
-
         <ul class="plan-features">
             <li>📞♾️ Minute și SMS în rețea: <strong>Nelimitate</strong></li>
             <li>📞 Minute + SMS naționale și roaming RO: <strong>1500 min și 100 SMS</strong></li>
@@ -422,21 +361,15 @@ const mobilPlansAbonament = {
             <li>📞🌎 Minute internaționale: <strong>100</strong> (UE + UA)</li>
             <li>🎁 Opțiuni cadou: <strong>MIXX</strong></li>
         </ul>
-
-        <a href="https://eshop.moldcell.md/ro/abonament/conectare" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
-        <!-- <button class="plan-button" style="background: var(--purple, #a020f0);">
-            Comandă
-        </button> -->
+        <a href="https://eshop.moldcell.md/ro/abonament/conectare" target="_blank" class="plan-button moldcell">Alege acest plan</a>
     </div>
 
     <div class="plan-card">
         <h4 class="plan-name">Mixx 290</h4>
-
         <div class="plan-price-container">
             <span class="plan-price">250 MDL</span>
             <span class="plan-period">/ lună</span>
         </div>
-
         <ul class="plan-features">
             <li>📞♾️ Minute și SMS în rețea: <strong>Nelimitate</strong></li>
             <li>📞 Minute + SMS naționale și roaming UE: <strong>Nelimitate min. + 100 SMS</strong></li>
@@ -444,11 +377,7 @@ const mobilPlansAbonament = {
             <li>📞🌎 Minute internaționale: <strong>300</strong> (UE + UA)</li>
             <li>🎁 Opțiuni cadou: <strong>MIXX</strong></li>
         </ul>
-
-        <a href="https://eshop.moldcell.md/ro/abonament/conectare" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
-        <!-- <button class="plan-button" style="background: var(--purple, #a020f0);">
-            Comandă
-        </button> -->
+        <a href="https://eshop.moldcell.md/ro/abonament/conectare" target="_blank" class="plan-button moldcell">Alege acest plan</a>
     </div>
   `,
   moldtelecom: `
@@ -466,8 +395,7 @@ const mobilPlansAbonament = {
             <li>📞🌎 Minute internaționale: <strong>35</strong></li>
             <li>💬 SMS naționale: <strong>35</strong></li>
         </ul>
-        <a href="https://new.moldtelecom.md/ro/mobile" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
-        <!-- <button class="plan-button" style="background: var(--purple);">Alege acest plan</button> -->
+        <a href="https://new.moldtelecom.md/ro/mobile" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
     </div>
 
     <div class="plan-card">
@@ -484,8 +412,7 @@ const mobilPlansAbonament = {
             <li>📞🌎 Minute internaționale: <strong>45</strong></li>
             <li>💬 SMS naționale: <strong>45</strong></li>
         </ul>
-        <a href="https://new.moldtelecom.md/ro/mobile" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
-        <!-- <button class="plan-button" style="background: var(--purple);">Alege acest plan</button> -->
+        <a href="https://new.moldtelecom.md/ro/mobile" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
     </div>
 
     <div class="plan-card">
@@ -503,8 +430,7 @@ const mobilPlansAbonament = {
             <li>📞🌎 Minute internaționale: <strong>85</strong></li>
             <li>💬 SMS naționale: <strong>85</strong></li>
         </ul>
-        <a href="https://new.moldtelecom.md/ro/mobile" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
-        <!-- <button class="plan-button" style="background: var(--purple);">Alege acest plan</button> -->
+        <a href="https://new.moldtelecom.md/ro/mobile" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
     </div>
 
     <div class="plan-card">
@@ -522,8 +448,7 @@ const mobilPlansAbonament = {
             <li>📞🌎 Minute internaționale: <strong>50</strong></li>
             <li>💬 SMS naționale: <strong>Nelimitat</strong></li>
         </ul>
-        <a href="https://new.moldtelecom.md/ro/mobile" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
-        <!-- <button class="plan-button" style="background: var(--purple);">Alege acest plan</button> -->
+        <a href="https://new.moldtelecom.md/ro/mobile" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
     </div>
   ` 
 };
@@ -541,8 +466,7 @@ const internetPlans = {
         <li>🔌 Tehnologie: <strong>Fibră optică</strong></li>
         <li>☎️ Telefonie fixă: <strong>Nelimitat în rețea</strong></li>
       </ul>
-      <a href="https://www.starnet.md/ro/promo-reducere/internet" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
-      <!-- <button class="plan-button" style="background: var(--purple);">Alege acest plan</button> -->
+      <a href="https://www.starnet.md/ro/promo-reducere/internet" target="_blank" class="plan-button starnet">Alege acest plan</a>
       <p class="plan-note">Contract 24 luni. Prețurile sunt orientative.</p>
     </div>
 
@@ -557,8 +481,7 @@ const internetPlans = {
         <li>🔌 Tehnologie: <strong>Fibră optică</strong></li>
         <li>☎️ Telefonie fixă: <strong>Nelimitat în rețea</strong></li>
       </ul>
-      <a href="https://www.starnet.md/ro/promo-reducere/internet" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
-      <!-- <button class="plan-button" style="background: var(--orange);">Alege acest plan</button> -->
+      <a href="https://www.starnet.md/ro/promo-reducere/internet" target="_blank" class="plan-button starnet">Alege acest plan</a>
       <p class="plan-note">Contract 24 luni. Prețurile sunt orientative.</p>
     </div>
 
@@ -573,8 +496,7 @@ const internetPlans = {
         <li>🔌 Tehnologie: <strong>Fibră optică</strong></li>
         <li>☎️ Telefonie fixă: <strong>Nelimitat în rețea</strong></li>
       </ul>
-      <a href="https://www.starnet.md/ro/promo-reducere/internet" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
-      <!-- <button class="plan-button" style="background: var(--purple);">Alege acest plan</button> -->
+      <a href="https://www.starnet.md/ro/promo-reducere/internet" target="_blank" class="plan-button starnet">Alege acest plan</a>
       <p class="plan-note">Contract 24 luni. Prețurile sunt orientative.</p>
     </div>
   `,
@@ -589,11 +511,11 @@ const internetPlans = {
         <li>⚡ Viteză internet: <strong>500 Mbps</strong></li>
         <li>📡 Router: <strong>Router Wi-Fi 6</strong></li>
       </ul>
-      <a href="https://www.starnet.md/ro/promo-reducere/internet" class="plan-button" style="background: var(--orange, #ff7a00);">Alege acest plan</a>
-      <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+      <a href="https://www.orange.md/ro/internet-si-tv/internet-acasa" target="_blank" class="plan-button orange">Alege acest plan</a>
       <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
     </div>
-    <div class="plan-card highlight">
+
+    <div class="plan-card">
       <h4 class="plan-name">Fibră ULTRA</h4>
       <div class="plan-price-container">
         <span class="plan-price">250 MDL</span>
@@ -603,9 +525,10 @@ const internetPlans = {
         <li>⚡ Viteză internet: <strong>940 Mbps</strong></li>
         <li>📡 Router: <strong>Router Wi-Fi 6</strong></li>
       </ul>
-      <button class="plan-button" style="background: var(--orange);">Alege acest plan</button>
+      <a href="https://www.orange.md/ro/internet-si-tv/internet-acasa" target="_blank" class="plan-button orange">Alege acest plan</a>
       <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
     </div>
+
     <div class="plan-card">
       <h4 class="plan-name">Fibră ULTRA FTTR</h4>
       <div class="plan-price-container">
@@ -616,7 +539,7 @@ const internetPlans = {
         <li>⚡ Viteză internet: <strong>2.2 Gbps</strong></li>
         <li>📡 Router: <strong>Router Wi-Fi 7</strong></li>
       </ul>
-      <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+      <a href="https://www.orange.md/ro/internet-si-tv/internet-acasa" target="_blank" class="plan-button orange">Alege acest plan</a>
       <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
     </div>
   `,
@@ -631,7 +554,7 @@ const internetPlans = {
           <li>⚡ Viteză internet: <strong>300 Mbps</strong></li>
           <li>📡 Router: <strong>Router Wi-Fi 6</strong></li>
       </ul>
-      <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+      <a href="https://new.moldtelecom.md/ro/internet" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
       <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
     </div>
 
@@ -645,7 +568,7 @@ const internetPlans = {
           <li>⚡ Viteză internet: <strong>500 Mbps</strong></li>
           <li>📡 Router: <strong>Router Wi-Fi 6</strong></li>
       </ul>
-      <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+      <a href="https://new.moldtelecom.md/ro/internet" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
       <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
     </div>
 
@@ -659,7 +582,7 @@ const internetPlans = {
             <li>⚡ Viteză internet: <strong>1000 Mbps</strong></li>
             <li>📡 Router: <strong>Router Wi-Fi 6</strong></li>
         </ul>
-        <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+        <a href="https://new.moldtelecom.md/ro/internet" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
         <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
     </div>
 
@@ -673,7 +596,7 @@ const internetPlans = {
             <li>⚡ Viteză internet: <strong>2.1 Gbps</strong></li>
             <li>📡 Router: <strong>Router Wi-Fi 6</strong></li>
         </ul>
-        <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+        <a href="https://new.moldtelecom.md/ro/internet" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
         <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
     </div>
 
@@ -687,7 +610,7 @@ const internetPlans = {
             <li>⚡ Viteză internet: <strong>5.5 Gbps</strong></li>
             <li>📡 Router: <strong>Router Wi-Fi 6</strong></li>
         </ul>
-        <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+        <a href="https://new.moldtelecom.md/ro/internet" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
         <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
     </div>
   `
@@ -706,9 +629,10 @@ const bundlePlans = {
         <li>📺 Canale TV: <strong>217 / 150 HD</strong></li>
         <li>☎️ Telefonie fixă: <strong>Nelimitat în rețea</strong></li>
       </ul>
-      <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+      <a href="https://www.starnet.md/ro/promo-reducere/internet-tv" target="_blank" class="plan-button starnet">Alege acest plan</a>
       <p class="plan-note">Contract 24 luni. Prețurile sunt orientative.</p>
     </div>
+
     <div class="plan-card">
       <h4 class="plan-name">Internet M + TV App</h4>
       <div class="plan-price-container">
@@ -720,9 +644,10 @@ const bundlePlans = {
         <li>📺 Canale TV: <strong>217 / 150 HD</strong></li>
         <li>☎️ Telefonie fixă: <strong>Nelimitat în rețea</strong></li>
       </ul>
-      <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+      <a href="https://www.starnet.md/ro/promo-reducere/internet-tv" target="_blank" class="plan-button starnet">Alege acest plan</a>
       <p class="plan-note">Contract 24 luni. Prețurile sunt orientative.</p>
     </div>
+    
     <div class="plan-card">
       <h4 class="plan-name">Internet L + TV App</h4>
       <div class="plan-price-container">
@@ -734,7 +659,7 @@ const bundlePlans = {
         <li>📺 Canale TV: <strong>217 / 150 HD</strong></li>
         <li>☎️ Telefonie fixă: <strong>Nelimitat în rețea</strong></li>
       </ul>
-      <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+      <a href="https://www.starnet.md/ro/promo-reducere/internet-tv" target="_blank" class="plan-button starnet">Alege acest plan</a>
       <p class="plan-note">Contract 24 luni. Prețurile sunt orientative.</p>
     </div>
   `,
@@ -751,7 +676,7 @@ const bundlePlans = {
           <li>📺 Canale TV: <strong>123 canale, 77 HD</strong></li>
           <li>🕐 Arhiva TV: <strong>Inclus</strong></li>
       </ul>
-      <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+      <a href="https://new.moldtelecom.md/ro/internet+tv" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
       <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
     </div>
 
@@ -767,7 +692,7 @@ const bundlePlans = {
             <li>📺 Canale TV: <strong>172 canale, 111 HD</strong></li>
             <li>🕐 Arhiva TV: <strong>Inclus</strong></li>
         </ul>
-        <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+        <a href="https://new.moldtelecom.md/ro/internet+tv" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
         <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
     </div>
 
@@ -783,7 +708,7 @@ const bundlePlans = {
             <li>📺 Canale TV: <strong>172 canale, 111 HD</strong></li>
             <li>🕐 Arhiva TV: <strong>Inclus</strong></li>
         </ul>
-        <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+        <a href="https://new.moldtelecom.md/ro/internet+tv" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
         <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
     </div>
 
@@ -799,7 +724,7 @@ const bundlePlans = {
             <li>📺 Canale TV: <strong>172 canale, 111 HD</strong></li>
             <li>🕐 Arhiva TV: <strong>Inclus</strong></li>
         </ul>
-        <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+        <a href="https://new.moldtelecom.md/ro/internet+tv" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
         <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
     </div>
 
@@ -815,7 +740,7 @@ const bundlePlans = {
             <li>📺 Canale TV: <strong>172 canale, 111 HD</strong></li>
             <li>🕐 Arhiva TV: <strong>Inclus</strong></li>
         </ul>
-        <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+        <a href="https://new.moldtelecom.md/ro/internet+tv" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
         <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
     </div>
   `,
@@ -832,7 +757,7 @@ const bundlePlans = {
         <li>📺 Canale TV: <strong>158 / 118 HD</strong></li>
         <li>🕐 Arhiva TV: <strong>43 canale</strong></li>
       </ul>
-      <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+      <a href="https://www.orange.md/ro/internet-si-tv" target="_blank" class="plan-button orange">Alege acest plan</a>
     </div>
 
     <div class="plan-card">
@@ -847,7 +772,7 @@ const bundlePlans = {
         <li>📺 Canale TV: <strong>178 / 137 HD</strong></li>
         <li>🕐 Arhiva TV: <strong>50 canale</strong></li>
       </ul>
-      <button class="plan-button" style="background: var(--orange);">Alege acest plan</button>
+      <a href="https://www.orange.md/ro/internet-si-tv" target="_blank" class="plan-button orange">Alege acest plan</a>
     </div>
 
     <div class="plan-card">
@@ -862,7 +787,7 @@ const bundlePlans = {
         <li>📺 Canale TV: <strong>178 / 137 HD</strong></li>
         <li>🕐 Arhiva TV: <strong>50 canale</strong></li>
       </ul>
-      <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+      <a href="https://www.orange.md/ro/internet-si-tv" target="_blank" class="plan-button orange">Alege acest plan</a>
     </div>
 
     <div class="plan-card">
@@ -877,7 +802,7 @@ const bundlePlans = {
         <li>📺 Canale TV: <strong>178 / 137 HD</strong></li>
         <li>🕐 Arhiva TV: <strong>50 canale</strong></li>
       </ul>
-      <button class="plan-button" style="background: var(--purple);">Alege acest plan</button>
+      <a href="https://www.orange.md/ro/internet-si-tv" target="_blank" class="plan-button orange">Alege acest plan</a>
     </div>
   `
 };
@@ -1056,3 +981,5 @@ function initSmoothAnchors() {
     });
   });
 }
+
+// (reverted header transparency logic)

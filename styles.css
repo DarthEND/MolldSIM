@@ -1,11 +1,14 @@
 :root {
   --purple: #6a1b9a;
   --magenta: #d81b60;
-  --orange: #ff7900;
   --charcoal: #1f1f1f;
   --graphite: #2a2a2a;
   --fog: #f6f6f8;
   --white: #ffffff;
+  --orange: #ff7900;
+  --moldcell: #6a1b9a;
+  --moldtelecom: #004B93;
+  --starnet: #FF6600;
 }
 
 /* Smooth scroll globally */
@@ -161,26 +164,13 @@ nav a:hover {
   background: var(--fog);
 }
 
-.btn-primary {
-  background: var(--orange);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 12px;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-  font-size: 0.875rem;
-  transition: opacity 0.2s;
-}
-
-.btn-primary:hover {
-  opacity: 0.9;
-}
-
 /* Hero */
-/* .hero {
+.hero {
   padding: 4rem 1rem;
   background: var(--fog);
+  /* Make hero fill the viewport height (with mobile-safe fallback) */
+  height: 100vh;   /* fallback for older browsers */
+  height: 100svh;  /* accounts for mobile dynamic toolbars */
 }
 
 .hero-content {
@@ -219,10 +209,22 @@ nav a:hover {
   text-decoration: none;
 }
 
-.hero-buttons a.btn-primary:hover {
-  background-color: transparent;
+.btn-primary {
   color: var(--orange);
   border: 2px solid var(--orange);
+  background:transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+}
+
+.hero-buttons a.btn-primary:hover {
+  background-color: var(--orange);
+  color: var(--white);
+  /* border: 2px solid var(--orange); */
   transition: all 0.2s;
 }
 
@@ -233,7 +235,7 @@ nav a:hover {
   cursor: pointer;
   font-size: 1rem;
   transition: all 0.2s;
-  border: 2px solid transparent;
+  /* border: 2px solid transparent; */
 }
 
 .btn-outline {
@@ -246,9 +248,9 @@ nav a:hover {
   background: var(--purple);
   color: white;
   transition: all 0.2s;
-} */
+}
 
-.hero { position: relative; overflow: hidden; }
+/* .hero { position: relative; overflow: hidden; }
 .hero-slider {
   position: relative;
   width: 100%;
@@ -259,14 +261,16 @@ nav a:hover {
   opacity: 0; transform: scale(1.01);
   transition: opacity 400ms ease, transform 500ms ease;
   will-change: opacity, transform;
+  pointer-events: none;
 }
 .hero-slide.is-active {
   opacity: 1; transform: scale(1);
+  pointer-events: auto;
 }
 .hero-slide img {
   width: 100%; height: 100%; object-fit: cover;
   transform: translateY(var(--parallax-y, 0px));
-  transition: transform 0ms; /* updated via JS */
+  transition: transform 0ms; updated via JS
 }
 .hero-overlay {
   position: absolute; inset: 0;
@@ -275,7 +279,55 @@ nav a:hover {
   background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.35));
   color: #fff;
 }
-.hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+.hero-ctas { 
+  display: flex; 
+  gap: 1rem; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+}
+
+.hero-ctas a {
+  text-decoration: none;
+} */
+
+/* .btn-primary {
+  color: var(--orange);
+  border: 2px solid var(--orange);
+  background:transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+} */
+
+/* .btn-primary:hover {
+  background-color: var(--orange);
+  color: white;
+  transition: all 0.2s;
+} */
+
+.btn-large {
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--purple);
+  border: 2px solid var(--purple);
+}
+
+.btn-outline:hover {
+  background: var(--purple);
+  color: white;
+  transition: all 0.2s;
+}
 
 /* Slider UI */
 .hero-arrow {
@@ -283,7 +335,8 @@ nav a:hover {
   background: rgba(0,0,0,.45); border: 0; color: #fff;
   padding: .6rem .8rem; border-radius: 999px; cursor: pointer;
 }
-.hero-prev { left: 1rem; } .hero-next { right: 1rem; }
+.hero-prev { left: 1rem; } 
+.hero-next { right: 1rem; }
 .hero-bullets {
   position: absolute; bottom: 1rem; left: 50%; translate: -50% 0;
   display: flex; gap: .5rem;
@@ -550,9 +603,53 @@ nav a:hover {
   border-radius: 12px;
   border: none;
   font-weight: 600;
-  color: white;
+  color: var(--charcoal);
   cursor: pointer;
   transition: opacity 0.2s;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.orange{
+  border: 1px solid var(--orange);
+  background-color: transparent;
+}
+
+.orange:hover{
+  background-color: var(--orange);
+  color: white;
+}
+
+.moldcell{
+  border: 1px solid var(--moldcell);
+  background-color: transparent;
+}
+
+.moldcell:hover{
+  background-color: var(--moldcell);
+  color: white;
+}
+
+.moldtelecom{
+  border: 1px solid var(--moldtelecom);
+  background-color: transparent;
+}
+
+.moldtelecom:hover{
+  background-color: var(--moldtelecom);
+  color: white;
+}
+
+.starnet{
+  border: 1px solid var(--starnet);
+  background-color: transparent;
+}
+
+.starnet:hover{
+  background-color: var(--starnet);
+  color: white;
 }
 
 .plan-button:hover {
