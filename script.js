@@ -1,10 +1,3 @@
-function toggleMenu() {
-  const menu = document.getElementById('mobileMenu');
-  const hamburger = document.querySelector('.hamburger');
-  menu.classList.toggle('active');
-  hamburger.classList.toggle('active');
-}
-
 const mobilPlansPrepay = {
   orange: `
     <div class="plan-card">
@@ -807,6 +800,13 @@ const bundlePlans = {
   `
 };
 
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const hamburger = document.querySelector('.hamburger');
+  menu.classList.toggle('active');
+  hamburger.classList.toggle('active');
+}
+
 document.getElementById('mobilPlansPrepay').innerHTML = mobilPlansPrepay["orange"];
 document.getElementById('mobilPlansAbonament').innerHTML = mobilPlansAbonament["orange"];
 document.getElementById('internetPlans').innerHTML = internetPlans["starnet"];
@@ -818,6 +818,9 @@ function switchMobilTabPrepay(provider) {
   const buttons = document.querySelectorAll('.tabs.prepayTabs .tab-button');
   buttons.forEach(btn => btn.classList.remove('active'));
   event.target.classList.add('active');
+
+  setupReveals();
+  markActive(currentIndex());
 }
 
 function switchMobilTabAbonament(provider) {
@@ -826,6 +829,9 @@ function switchMobilTabAbonament(provider) {
   const buttons = document.querySelectorAll('.tabs.abonamenteTabs .tab-button');
   buttons.forEach(btn => btn.classList.remove('active'));
   event.target.classList.add('active');
+
+  setupReveals();
+  markActive(currentIndex());
 }
 
 function switchInternetTab(provider) {
@@ -834,6 +840,9 @@ function switchInternetTab(provider) {
   const buttons = document.querySelectorAll('#internet .tabs.internetTabs .tab-button');
   buttons.forEach(btn => btn.classList.remove('active'));
   event.target.classList.add('active');
+
+  setupReveals();
+  markActive(currentIndex());
 }
 
 function switchBundleTab(provider) {
@@ -842,144 +851,213 @@ function switchBundleTab(provider) {
   const buttons = document.querySelectorAll('#internet_tv .tabs.bundleTabs .tab-button');
   buttons.forEach(btn => btn.classList.remove('active'));
   event.target.classList.add('active');
+
+  setupReveals();
+  markActive(currentIndex());
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  initHeroSlider();
-  initRevealOnScroll();
-  initParallax();          // very subtle
-  initSmoothAnchors();     // offsets sticky header
-});
+// Header
 
-/* ===== Hero Slider (vanilla) ===== */
-function initHeroSlider() {
-  const root = document.querySelector('.hero-slider');
-  if (!root) return;
+// Fix: event type must be a string ('scroll'), not an identifier
+window.addEventListener('scroll', () => {
+  const header = document.querySelector("header");
+  const nextSection = document.querySelector("#cum-functioneaza").offsetTop;
+  if(window.scrollY > nextSection - 10){
+    header.classList.add("scroll")
+  }else{
+    header.classList.remove("scroll")
+  }
+})
 
-  const slides = Array.from(root.querySelectorAll('.hero-slide'));
-  const bulletsWrap = root.querySelector('.hero-bullets');
-  const prevBtn = root.querySelector('.hero-prev');
-  const nextBtn = root.querySelector('.hero-next');
-  let i = 0;
-  let autoplayMs = parseInt(root.dataset.autoplay || '5000', 10);
-  let timer = null;
-  let paused = false;
+/* ---------------------------
+   SNAP CONTROLLER (IIFE)
+   - slower, buttery scroll
+   - disables native snap during JS animation
+   - respects tall sections (scroll inside first)
+----------------------------*/
 
-  slides.forEach((s, idx) => {
-    const b = document.createElement('button');
-    b.type = 'button';
-    b.setAttribute('aria-label', `Slide ${idx + 1}`);
-    b.addEventListener('click', () => goTo(idx, true));
-    bulletsWrap.appendChild(b);
-  });
+(() => {
+  // 🔧 Tweak these to taste
+  const SCROLL_DURATION = 2000;   // ms for the animated scroll between sections
+  const WHEEL_THRESHOLD = 80;     // ignore small wheel deltas (prevents accidental snaps)
+  const SWIPE_THRESHOLD = 40;     // px swipe required on touch
 
-  function applyActive() {
-    slides.forEach((s, k) => s.classList.toggle('is-active', k === i));
-    bulletsWrap.querySelectorAll('button').forEach((b, k) => {
-      b.toggleAttribute('aria-current', k === i);
+  // Read sticky header height from CSS var
+  const HEADER_H = parseInt(
+    getComputedStyle(document.documentElement).getPropertyValue('--header-height')
+  ) || 0;
+
+  const sections = Array.from(document.querySelectorAll('.snap-section'));
+  if (!sections.length) return;
+
+  // Target that actually animates opacity/translate
+  const animTargets = sections.map(s => s.querySelector('.snap-anim') || s);
+
+  /* -------------------------------------------------
+     REVEAL SETUP: mark inner content to fade in
+     - Prefer .container > * (clean structure in your HTML)
+     - Fallback: direct children of .snap-anim
+  --------------------------------------------------*/
+  function setupReveals() {
+    animTargets.forEach((wrap) => {
+      const container = wrap.querySelector('.container');
+      const items = container
+        ? Array.from(container.children)
+        : Array.from(wrap.children);
+
+      items.forEach(el => {
+        // idempotent: only add once
+        if (!el.classList.contains('reveal')) {
+          el.classList.add('reveal');        // base hidden state
+          el.classList.add('reveal-item');   // marker used by JS
+        }
+      });
+    });
+  }
+  setupReveals();
+
+  // Mark page ready so CSS enables the animation states
+  document.body.classList.add('snap-ready');
+
+    function markActive(idx) {
+    animTargets.forEach((wrap, i) => {
+      const isActive = i === idx;
+      wrap.classList.toggle('is-active', isActive);
+
+      // Stagger the content reveal inside this section
+      const items = Array.from(wrap.querySelectorAll('.reveal-item'));
+      items.forEach((el, j) => {
+        // cap the total delay so it doesn't feel too slow
+        const delay = Math.min(j * 120, 600); // 0ms, 120ms, 240ms, ... up to 600ms
+        if (isActive) {
+          el.style.transitionDelay = `${delay}ms`;
+          el.classList.add('reveal-in');
+        } else {
+          el.style.transitionDelay = '';
+          el.classList.remove('reveal-in');
+        }
+      });
     });
   }
 
-  function goTo(n, user = false) {
-    i = (n + slides.length) % slides.length;
-    applyActive();
-    if (user) restart();
+
+  function topOf(el) {
+    return Math.max(0, el.getBoundingClientRect().top + window.scrollY - HEADER_H);
+  }
+  function bottomOf(el) {
+    return el.getBoundingClientRect().bottom + window.scrollY - HEADER_H;
   }
 
-  function next() { goTo(i + 1); }
-  function prev() { goTo(i - 1); }
-
-  function start() {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    stop();
-    timer = setInterval(next, autoplayMs);
+  function currentIndex() {
+    const mid = window.scrollY + window.innerHeight * 0.5;
+    let best = 0, bestDist = Infinity;
+    sections.forEach((s, i) => {
+      const center = (topOf(s) + bottomOf(s)) / 2;
+      const d = Math.abs(center - mid);
+      if (d < bestDist) { bestDist = d; best = i; }
+    });
+    return best;
   }
-  function stop() { if (timer) clearInterval(timer); timer = null; }
-  function restart() { if (!paused) start(); }
 
-  // touch swipe
-  let startX = 0;
-  root.addEventListener('pointerdown', e => { startX = e.clientX; });
-  root.addEventListener('pointerup', e => {
-    const dx = e.clientX - startX;
-    if (Math.abs(dx) > 40) (dx < 0 ? next() : prev());
+  // Smooth scroll with cubic-in-out easing
+  function animateScrollTo(targetY, duration = SCROLL_DURATION) {
+    const startY = window.scrollY;
+    const delta = targetY - startY;
+    if (Math.abs(delta) < 2) return Promise.resolve();
+
+    const t0 = performance.now();
+    const ease = t => (t < 0.5)
+      ? 4 * t * t * t
+      : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+    return new Promise(resolve => {
+      function frame(t) {
+        const p = Math.min(1, (t - t0) / duration);
+        const y = startY + delta * ease(p);
+        window.scrollTo(0, Math.round(y));
+        if (p < 1) requestAnimationFrame(frame);
+        else resolve();
+      }
+      requestAnimationFrame(frame);
+    });
+  }
+
+  function targetIndex(dir) {
+    const i = currentIndex();
+    const s = sections[i];
+    const top = topOf(s);
+    const bottom = bottomOf(s);
+    const y = window.scrollY;
+    const nearTop = y - top < 32;
+    const nearBottom = bottom - (y + window.innerHeight) < 32;
+
+    // If section is tall and we're not at its edge, keep native scroll inside it
+    if (dir > 0 && !nearBottom && bottom - y > window.innerHeight) return i;
+    if (dir < 0 && !nearTop && y - top > 0) return i;
+
+    return Math.max(0, Math.min(sections.length - 1, i + dir));
+  }
+
+  let locked = false;
+  async function snap(dir) {
+    if (locked) return;
+    locked = true;
+
+    const idx = targetIndex(dir);
+    const y = topOf(sections[idx]);
+    markActive(idx);
+
+    // 🔕 turn OFF native CSS snap while JS animates (prevents the quick “jump” feel)
+    document.documentElement.classList.add('is-snapping');
+    await animateScrollTo(y, SCROLL_DURATION);
+    document.documentElement.classList.remove('is-snapping');
+
+    setTimeout(() => { locked = false; }, 200);
+  }
+
+  // Wheel / trackpad
+  function onWheel(e) {
+    const magnitude = Math.abs(e.deltaY);
+    if (magnitude < WHEEL_THRESHOLD) return; // allow micro scrolls inside
+    e.preventDefault();
+    snap(e.deltaY > 0 ? 1 : -1);
+  }
+  window.addEventListener('wheel', onWheel, { passive: false });
+
+  // Keyboard
+  window.addEventListener('keydown', (e) => {
+    if (e.defaultPrevented) return;
+    if (['ArrowDown','PageDown',' '].includes(e.key)) { e.preventDefault(); snap(1); }
+    if (['ArrowUp','PageUp'].includes(e.key)) { e.preventDefault(); snap(-1); }
+  });
+
+  // Touch (vertical swipe only)
+  let startY = null, startX = null;
+  window.addEventListener('touchstart', (e) => {
+    startY = e.touches[0].clientY;
+    startX = e.touches[0].clientX;
   }, { passive: true });
 
-  // pause on hover
-  root.addEventListener('mouseenter', () => { paused = true; stop(); });
-  root.addEventListener('mouseleave', () => { paused = false; start(); });
+  window.addEventListener('touchmove', (e) => {
+    if (startY == null) return;
+    const dy = startY - e.touches[0].clientY;
+    const dx = startX - e.touches[0].clientX;
+    if (Math.abs(dx) > Math.abs(dy)) return; // ignore horizontal
 
-  // init
-  applyActive();
-  start();
-
-  prevBtn.addEventListener('click', prev);
-  nextBtn.addEventListener('click', next);
-}
-
-/* ===== Reveal on Scroll (fade + up) ===== */
-function initRevealOnScroll() {
-  const els = document.querySelectorAll('.reveal');
-  if (!els.length) return;
-
-  const io = new IntersectionObserver((entries, obs) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) {
-        e.target.classList.add('reveal-in');
-        obs.unobserve(e.target);
-      }
-    });
-  }, { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
-
-  els.forEach(el => io.observe(el));
-}
-
-/* ===== Very subtle Parallax for hero images ===== */
-function initParallax() {
-  const imgEls = document.querySelectorAll('.hero-slide img');
-  if (!imgEls.length) return;
-
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReduced) return;
-
-  let ticking = false;
-  function onScroll() {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      const y = window.scrollY;
-      // Cap max translate to ~16px for subtlety
-      const offset = Math.max(-16, Math.min(16, y * 0.06));
-      imgEls.forEach(img => img.style.setProperty('--parallax-y', `${offset}px`));
-      ticking = false;
-    });
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-}
-
-/* ===== Smooth Anchors with sticky header offset ===== */
-function initSmoothAnchors() {
-  const header = document.querySelector('header');
-  const offset = () => (header ? header.getBoundingClientRect().height : 0) + 8;
-
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', (e) => {
-      const id = a.getAttribute('href');
-      const target = document.querySelector(id);
-      if (!target) return;
-
+    if (Math.abs(dy) > SWIPE_THRESHOLD) {
       e.preventDefault();
-      const top = Math.max(0, target.getBoundingClientRect().top + window.scrollY - offset());
-      window.scrollTo({ top, behavior: 'smooth' });
+      snap(dy > 0 ? 1 : -1);
+      startY = startX = null;
+    }
+  }, { passive: false });
 
-      // If there’s a mobile menu open in existing code, close it here (safe guard):
-      const mobileMenu = document.querySelector('[data-mobile-menu]');
-      if (mobileMenu && mobileMenu.classList.contains('open')) {
-        mobileMenu.classList.remove('open');
-      }
-    });
+  // Keep alignment on resize
+  window.addEventListener('resize', () => {
+    const idx = currentIndex();
+    markActive(idx);
+    window.scrollTo(0, topOf(sections[idx]));
   });
-}
 
-// (reverted header transparency logic)
+  // Init
+  markActive(currentIndex());
+})();
