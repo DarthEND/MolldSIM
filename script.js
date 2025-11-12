@@ -864,133 +864,133 @@ window.addEventListener('scroll', () => {
    - respects tall sections (scroll inside first)
 ----------------------------*/
 
-(() => {
-  // 🔧 Tweak these to taste
-  const SCROLL_DURATION = 2000;   // ms for the animated scroll between sections was 2000
-  const WHEEL_THRESHOLD = 80;     // ignore small wheel deltas (prevents accidental snaps)
-  const SWIPE_THRESHOLD = 40;     // px swipe required on touch
+// (() => {
+//   // 🔧 Tweak these to taste
+//   const SCROLL_DURATION = 2000;   // ms for the animated scroll between sections was 2000
+//   const WHEEL_THRESHOLD = 80;     // ignore small wheel deltas (prevents accidental snaps)
+//   const SWIPE_THRESHOLD = 40;     // px swipe required on touch
 
-  // Read sticky header height from CSS var
-  // const HEADER_H = parseInt(
-  //   getComputedStyle(document.documentElement).getPropertyValue('--header-height')
-  // ) || 0;
-  const HEADER_H = 0;
+//   // Read sticky header height from CSS var
+//   // const HEADER_H = parseInt(
+//   //   getComputedStyle(document.documentElement).getPropertyValue('--header-height')
+//   // ) || 0;
+//   const HEADER_H = 0;
   
-  const sections = Array.from(document.querySelectorAll('.snap-section'));
-  if (!sections.length) return;
+//   const sections = Array.from(document.querySelectorAll('.snap-section'));
+//   if (!sections.length) return;
 
-  function topOf(el) {
-    return Math.max(0, el.getBoundingClientRect().top + window.scrollY - HEADER_H);
-  }
-  function bottomOf(el) {
-    return el.getBoundingClientRect().bottom + window.scrollY - HEADER_H;
-  }
+//   function topOf(el) {
+//     return Math.max(0, el.getBoundingClientRect().top + window.scrollY - HEADER_H);
+//   }
+//   function bottomOf(el) {
+//     return el.getBoundingClientRect().bottom + window.scrollY - HEADER_H;
+//   }
 
-  function currentIndex() {
-    const mid = window.scrollY + window.innerHeight * 0.5;
-    let best = 0, bestDist = Infinity;
-    sections.forEach((s, i) => {
-      const center = (topOf(s) + bottomOf(s)) / 2;
-      const d = Math.abs(center - mid);
-      if (d < bestDist) { bestDist = d; best = i; }
-    });
-    return best;
-  }
+//   function currentIndex() {
+//     const mid = window.scrollY + window.innerHeight * 0.5;
+//     let best = 0, bestDist = Infinity;
+//     sections.forEach((s, i) => {
+//       const center = (topOf(s) + bottomOf(s)) / 2;
+//       const d = Math.abs(center - mid);
+//       if (d < bestDist) { bestDist = d; best = i; }
+//     });
+//     return best;
+//   }
 
-  // Smooth scroll with cubic-in-out easing
-  function animateScrollTo(targetY, duration = SCROLL_DURATION) {
-    const startY = window.scrollY;
-    const delta = targetY - startY;
-    if (Math.abs(delta) < 2) return Promise.resolve();
+//   // Smooth scroll with cubic-in-out easing
+//   function animateScrollTo(targetY, duration = SCROLL_DURATION) {
+//     const startY = window.scrollY;
+//     const delta = targetY - startY;
+//     if (Math.abs(delta) < 2) return Promise.resolve();
 
-    const t0 = performance.now();
-    const ease = t => (t < 0.5)
-      ? 4 * t * t * t
-      : 1 - Math.pow(-2 * t + 2, 3) / 2;
+//     const t0 = performance.now();
+//     const ease = t => (t < 0.5)
+//       ? 4 * t * t * t
+//       : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
-    return new Promise(resolve => {
-      function frame(t) {
-        const p = Math.min(1, (t - t0) / duration);
-        const y = startY + delta * ease(p);
-        window.scrollTo(0, Math.round(y));
-        if (p < 1) requestAnimationFrame(frame);
-        else resolve();
-      }
-      requestAnimationFrame(frame);
-    });
-  }
+//     return new Promise(resolve => {
+//       function frame(t) {
+//         const p = Math.min(1, (t - t0) / duration);
+//         const y = startY + delta * ease(p);
+//         window.scrollTo(0, Math.round(y));
+//         if (p < 1) requestAnimationFrame(frame);
+//         else resolve();
+//       }
+//       requestAnimationFrame(frame);
+//     });
+//   }
 
-  function targetIndex(dir) {
-    const i = currentIndex();
-    const s = sections[i];
-    const top = topOf(s);
-    const bottom = bottomOf(s);
-    const y = window.scrollY;
-    const nearTop = y - top < 32;
-    const nearBottom = bottom - (y + window.innerHeight) < 32;
+//   function targetIndex(dir) {
+//     const i = currentIndex();
+//     const s = sections[i];
+//     const top = topOf(s);
+//     const bottom = bottomOf(s);
+//     const y = window.scrollY;
+//     const nearTop = y - top < 32;
+//     const nearBottom = bottom - (y + window.innerHeight) < 32;
 
-    // If section is tall and we're not at its edge, keep native scroll inside it
-    if (dir > 0 && !nearBottom && bottom - y > window.innerHeight) return i;
-    if (dir < 0 && !nearTop && y - top > 0) return i;
+//     // If section is tall and we're not at its edge, keep native scroll inside it
+//     if (dir > 0 && !nearBottom && bottom - y > window.innerHeight) return i;
+//     if (dir < 0 && !nearTop && y - top > 0) return i;
 
-    return Math.max(0, Math.min(sections.length - 1, i + dir));
-  }
+//     return Math.max(0, Math.min(sections.length - 1, i + dir));
+//   }
 
-  let locked = false;
-  async function snap(dir) {
-    if (locked) return;
-    locked = true;
+//   let locked = false;
+//   async function snap(dir) {
+//     if (locked) return;
+//     locked = true;
 
-    const idx = targetIndex(dir);
-    const y = topOf(sections[idx]);
+//     const idx = targetIndex(dir);
+//     const y = topOf(sections[idx]);
 
-    // 🔕 turn OFF native CSS snap while JS animates (prevents the quick “jump” feel)
-    document.documentElement.classList.add('is-snapping');
-    await animateScrollTo(y, SCROLL_DURATION);
-    document.documentElement.classList.remove('is-snapping');
+//     // 🔕 turn OFF native CSS snap while JS animates (prevents the quick “jump” feel)
+//     document.documentElement.classList.add('is-snapping');
+//     await animateScrollTo(y, SCROLL_DURATION);
+//     document.documentElement.classList.remove('is-snapping');
 
-    setTimeout(() => { locked = false; }, 200);
-  }
+//     setTimeout(() => { locked = false; }, 200);
+//   }
 
-  // Wheel / trackpad
-  function onWheel(e) {
-    const magnitude = Math.abs(e.deltaY);
-    if (magnitude < WHEEL_THRESHOLD) return; // allow micro scrolls inside
-    e.preventDefault();
-    snap(e.deltaY > 0 ? 1 : -1);
-  }
-  window.addEventListener('wheel', onWheel, { passive: false });
+//   // Wheel / trackpad
+//   function onWheel(e) {
+//     const magnitude = Math.abs(e.deltaY);
+//     if (magnitude < WHEEL_THRESHOLD) return; // allow micro scrolls inside
+//     e.preventDefault();
+//     snap(e.deltaY > 0 ? 1 : -1);
+//   }
+//   window.addEventListener('wheel', onWheel, { passive: false });
 
-  // Keyboard
-  window.addEventListener('keydown', (e) => {
-    if (e.defaultPrevented) return;
-    if (['ArrowDown','PageDown',' '].includes(e.key)) { e.preventDefault(); snap(1); }
-    if (['ArrowUp','PageUp'].includes(e.key)) { e.preventDefault(); snap(-1); }
-  });
+//   // Keyboard
+//   window.addEventListener('keydown', (e) => {
+//     if (e.defaultPrevented) return;
+//     if (['ArrowDown','PageDown',' '].includes(e.key)) { e.preventDefault(); snap(1); }
+//     if (['ArrowUp','PageUp'].includes(e.key)) { e.preventDefault(); snap(-1); }
+//   });
 
-  // Touch (vertical swipe only)
-  let startY = null, startX = null;
-  window.addEventListener('touchstart', (e) => {
-    startY = e.touches[0].clientY;
-    startX = e.touches[0].clientX;
-  }, { passive: true });
+//   // Touch (vertical swipe only)
+//   let startY = null, startX = null;
+//   window.addEventListener('touchstart', (e) => {
+//     startY = e.touches[0].clientY;
+//     startX = e.touches[0].clientX;
+//   }, { passive: true });
 
-  window.addEventListener('touchmove', (e) => {
-    if (startY == null) return;
-    const dy = startY - e.touches[0].clientY;
-    const dx = startX - e.touches[0].clientX;
-    if (Math.abs(dx) > Math.abs(dy)) return; // ignore horizontal
+//   window.addEventListener('touchmove', (e) => {
+//     if (startY == null) return;
+//     const dy = startY - e.touches[0].clientY;
+//     const dx = startX - e.touches[0].clientX;
+//     if (Math.abs(dx) > Math.abs(dy)) return; // ignore horizontal
 
-    if (Math.abs(dy) > SWIPE_THRESHOLD) {
-      e.preventDefault();
-      snap(dy > 0 ? 1 : -1);
-      startY = startX = null;
-    }
-  }, { passive: false });
+//     if (Math.abs(dy) > SWIPE_THRESHOLD) {
+//       e.preventDefault();
+//       snap(dy > 0 ? 1 : -1);
+//       startY = startX = null;
+//     }
+//   }, { passive: false });
 
-  // Keep alignment on resize
-  window.addEventListener('resize', () => {
-    const idx = currentIndex();
-    window.scrollTo(0, topOf(sections[idx]));
-  });
-})();
+//   // Keep alignment on resize
+//   window.addEventListener('resize', () => {
+//     const idx = currentIndex();
+//     window.scrollTo(0, topOf(sections[idx]));
+//   });
+// })();
