@@ -1,6 +1,7 @@
+// --- DATA (unchanged) -------------------------------------------------
 const mobilPlansPrepay = {
   orange: `
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Reîncărcare 30 MDL</h4>
         <div class="plan-price-container">
             <span class="plan-price">30 MDL</span>
@@ -14,7 +15,7 @@ const mobilPlansPrepay = {
         <p class="plan-note">Valabile 15 zile.</p>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Reîncărcare 50 MDL</h4>
         <div class="plan-price-container">
             <span class="plan-price">50 MDL</span>
@@ -28,7 +29,7 @@ const mobilPlansPrepay = {
         <p class="plan-note">Valabile 15 zile.</p>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Reîncărcare 60 MDL</h4>
         <div class="plan-price-container">
             <span class="plan-price">60 MDL</span>
@@ -42,7 +43,7 @@ const mobilPlansPrepay = {
         <p class="plan-note">Valabile 15 zile.</p>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="700" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Reîncărcare 100 MDL</h4>
         <div class="plan-price-container">
             <span class="plan-price">100 MDL</span>
@@ -57,7 +58,7 @@ const mobilPlansPrepay = {
     </div>
   `,
   moldcell: `
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
+    <div class="plan-card">
       <h4 class="plan-name">Cartelă 49</h4>
       <div class="plan-price-container">
         <span class="plan-price">49 MDL</span>
@@ -70,7 +71,7 @@ const mobilPlansPrepay = {
       <a href="https://eshop.moldcell.md/ro/prepay/e-abonament" target="_blank" class="plan-button moldcell">Alege acest plan</a>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000">
+    <div class="plan-card">
       <h4 class="plan-name">E-Abonament 80</h4>
       <div class="plan-price-container">
         <span class="plan-price">80 MDL</span>
@@ -84,7 +85,7 @@ const mobilPlansPrepay = {
       <a href="https://eshop.moldcell.md/ro/prepay/e-abonament" target="_blank" class="plan-button moldcell">Alege acest plan</a>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="1000">
+    <div class="plan-card">
       <h4 class="plan-name">E-Abonament 100</h4>
       <div class="plan-price-container">
         <span class="plan-price">100 MDL</span>
@@ -100,7 +101,7 @@ const mobilPlansPrepay = {
     </div>
   `,
   moldtelecom: `
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Start 25</h4>
         <div class="plan-price-container">
             <span class="plan-price">25 MDL</span>
@@ -115,7 +116,7 @@ const mobilPlansPrepay = {
         <p class="plan-note">Valabile 14 zile.</p>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Connect 60</h4>
         <div class="plan-price-container">
             <span class="plan-price">60 MDL</span>
@@ -130,7 +131,7 @@ const mobilPlansPrepay = {
         <p class="plan-note">Valabile 14 zile.</p>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Young 80</h4>
         <div class="plan-price-container">
             <span class="plan-price">80 MDL</span>
@@ -145,7 +146,7 @@ const mobilPlansPrepay = {
         <p class="plan-note">Valabile 14 zile.</p>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="700" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Family 100</h4>
         <div class="plan-price-container">
             <span class="plan-price">100 MDL</span>
@@ -161,7 +162,7 @@ const mobilPlansPrepay = {
         <p class="plan-note">Valabile 14 zile.</p>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="900" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Liberty 130</h4>
         <div class="plan-price-container">
             <span class="plan-price">130 MDL</span>
@@ -177,7 +178,7 @@ const mobilPlansPrepay = {
         <p class="plan-note">Valabile 14 zile.</p>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="1100" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Travel 150</h4>
         <div class="plan-price-container">
             <span class="plan-price">150 MDL</span>
@@ -193,7 +194,7 @@ const mobilPlansPrepay = {
         <p class="plan-note">Valabile 14 zile.</p>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="1300" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Unlimited 180</h4>
         <div class="plan-price-container">
             <span class="plan-price">180 MDL</span>
@@ -214,7 +215,7 @@ const mobilPlansPrepay = {
 
 const mobilPlansAbonament = {
   orange: `
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Start 100</h4>
         <div class="plan-price-container">
             <span class="plan-price">100 MDL</span>
@@ -229,7 +230,7 @@ const mobilPlansAbonament = {
         <a href="https://www.orange.md/ro/abonament" target="_blank" class="plan-button orange">Alege acest plan</a>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Max 150</h4>
         <div class="plan-price-container">
             <span class="plan-price">105 MDL</span>
@@ -244,7 +245,7 @@ const mobilPlansAbonament = {
         <a href="https://www.orange.md/ro/abonament" target="_blank" class="plan-button orange">Alege acest plan</a>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Max 175</h4>
         <div class="plan-price-container">
             <span class="plan-price">122,50 MDL</span>
@@ -260,7 +261,7 @@ const mobilPlansAbonament = {
         <a href="https://www.orange.md/ro/abonament" target="_blank" class="plan-button orange">Alege acest plan</a>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="700" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Max 200</h4>
         <div class="plan-price-container">
             <span class="plan-price">140 lei</span>
@@ -276,7 +277,7 @@ const mobilPlansAbonament = {
         <a href="https://www.orange.md/ro/abonament" target="_blank" class="plan-button orange">Alege acest plan</a>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="900" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Max 290</h4>
         <div class="plan-price-container">
             <span class="plan-price">145 lei</span>
@@ -293,7 +294,7 @@ const mobilPlansAbonament = {
         <a href="https://www.orange.md/ro/abonament" target="_blank" class="plan-button orange">Alege acest plan</a>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="1100" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Max 400</h4>
         <div class="plan-price-container">
             <span class="plan-price">400 lei</span>
@@ -310,7 +311,7 @@ const mobilPlansAbonament = {
     </div>
   `,
   moldcell: `
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Mixx 140</h4>
         <div class="plan-price-container">
             <span class="plan-price">100 MDL</span>
@@ -325,7 +326,7 @@ const mobilPlansAbonament = {
         <a href="https://eshop.moldcell.md/ro/abonament/conectare" target="_blank" class="plan-button moldcell">Alege acest plan</a>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Mixx 180</h4>
         <div class="plan-price-container">
             <span class="plan-price">125 MDL</span>
@@ -341,7 +342,7 @@ const mobilPlansAbonament = {
         <a href="https://eshop.moldcell.md/ro/abonament/conectare" target="_blank" class="plan-button moldcell">Alege acest plan</a>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Mixx 200</h4>
         <div class="plan-price-container">
             <span class="plan-price">145 MDL</span>
@@ -357,7 +358,7 @@ const mobilPlansAbonament = {
         <a href="https://eshop.moldcell.md/ro/abonament/conectare" target="_blank" class="plan-button moldcell">Alege acest plan</a>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="700" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Mixx 290</h4>
         <div class="plan-price-container">
             <span class="plan-price">250 MDL</span>
@@ -374,7 +375,7 @@ const mobilPlansAbonament = {
     </div>
   `,
   moldtelecom: `
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Start 120</h4>
         <div class="plan-price-container">
             <span class="plan-price">95 MDL</span>
@@ -391,7 +392,7 @@ const mobilPlansAbonament = {
         <a href="https://new.moldtelecom.md/ro/mobile" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Flex 150</h4>
         <div class="plan-price-container">
             <span class="plan-price">115 MDL</span>
@@ -408,7 +409,7 @@ const mobilPlansAbonament = {
         <a href="https://new.moldtelecom.md/ro/mobile" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Liberty 200</h4>
         <div class="plan-price-container">
             <span class="plan-price">140 MDL</span>
@@ -426,7 +427,7 @@ const mobilPlansAbonament = {
         <a href="https://new.moldtelecom.md/ro/mobile" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="700" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Liberty 290+</h4>
         <div class="plan-price-container">
             <span class="plan-price">190 MDL</span>
@@ -448,7 +449,7 @@ const mobilPlansAbonament = {
 
 const internetPlans = {
   starnet: `
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
+    <div class="plan-card">
       <h4 class="plan-name">Internet S</h4>
       <div class="plan-price-container">
         <span class="plan-price">140 MDL</span>
@@ -463,7 +464,7 @@ const internetPlans = {
       <p class="plan-note">Contract 24 luni. Prețurile sunt orientative.</p>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000">
+    <div class="plan-card">
       <h4 class="plan-name">Internet M</h4>
       <div class="plan-price-container">
         <span class="plan-price">180 MDL</span>
@@ -478,7 +479,7 @@ const internetPlans = {
       <p class="plan-note">Contract 24 luni. Prețurile sunt orientative.</p>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="1000">
+    <div class="plan-card">
       <h4 class="plan-name">Internet L</h4>
       <div class="plan-price-container">
         <span class="plan-price">240 MDL</span>
@@ -494,7 +495,7 @@ const internetPlans = {
     </div>
   `,
   orange: `
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="700" data-aos-duration="1000">
+    <div class="plan-card">
       <h4 class="plan-name">Fibră OPTIM</h4>
       <div class="plan-price-container">
         <span class="plan-price">200 MDL</span>
@@ -508,7 +509,7 @@ const internetPlans = {
       <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="900" data-aos-duration="1000">
+    <div class="plan-card">
       <h4 class="plan-name">Fibră ULTRA</h4>
       <div class="plan-price-container">
         <span class="plan-price">250 MDL</span>
@@ -522,7 +523,7 @@ const internetPlans = {
       <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="1100" data-aos-duration="1000">
+    <div class="plan-card">
       <h4 class="plan-name">Fibră ULTRA FTTR</h4>
       <div class="plan-price-container">
         <span class="plan-price">450 MDL</span>
@@ -537,7 +538,7 @@ const internetPlans = {
     </div>
   `,
   moldtelecom: `
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
+    <div class="plan-card">
       <h4 class="plan-name">Pachet 1</h4>
       <div class="plan-price-container">
           <span class="plan-price">130 MDL</span>
@@ -551,7 +552,7 @@ const internetPlans = {
       <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000">
+    <div class="plan-card">
       <h4 class="plan-name">Pachet 2</h4>
       <div class="plan-price-container">
           <span class="plan-price">150 MDL</span>
@@ -565,7 +566,7 @@ const internetPlans = {
       <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Pachet 3</h4>
         <div class="plan-price-container">
             <span class="plan-price">200 MDL</span>
@@ -579,7 +580,7 @@ const internetPlans = {
         <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="700" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Pachet 4</h4>
         <div class="plan-price-container">
             <span class="plan-price">299 MDL</span>
@@ -593,7 +594,7 @@ const internetPlans = {
         <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="900" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Pachet 5</h4>
         <div class="plan-price-container">
             <span class="plan-price">499 MDL</span>
@@ -611,7 +612,7 @@ const internetPlans = {
 
 const bundlePlans = {
   starnet: `
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
+    <div class="plan-card">
       <h4 class="plan-name">Internet S + TV App</h4>
       <div class="plan-price-container">
         <span class="plan-price">185 MDL</span>
@@ -626,7 +627,7 @@ const bundlePlans = {
       <p class="plan-note">Contract 24 luni. Prețurile sunt orientative.</p>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000">
+    <div class="plan-card">
       <h4 class="plan-name">Internet M + TV App</h4>
       <div class="plan-price-container">
         <span class="plan-price">225 MDL</span>
@@ -640,8 +641,8 @@ const bundlePlans = {
       <a href="https://www.starnet.md/ro/promo-reducere/internet-tv" target="_blank" class="plan-button starnet">Alege acest plan</a>
       <p class="plan-note">Contract 24 luni. Prețurile sunt orientative.</p>
     </div>
-    
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="1000">
+
+    <div class="plan-card">
       <h4 class="plan-name">Internet L + TV App</h4>
       <div class="plan-price-container">
         <span class="plan-price">285 MDL</span>
@@ -657,7 +658,7 @@ const bundlePlans = {
     </div>
   `,
   moldtelecom: `
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
+    <div class="plan-card">
       <h4 class="plan-name">Pachet 1</h4>
       <div class="plan-price-container">
           <span class="plan-price">170 MDL</span>
@@ -673,7 +674,7 @@ const bundlePlans = {
       <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Pachet 2</h4>
         <div class="plan-price-container">
             <span class="plan-price">200 MDL</span>
@@ -689,7 +690,7 @@ const bundlePlans = {
         <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Pachet 3</h4>
         <div class="plan-price-container">
             <span class="plan-price">250 MDL</span>
@@ -705,7 +706,7 @@ const bundlePlans = {
         <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="700" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Pachet 4</h4>
         <div class="plan-price-container">
             <span class="plan-price">349 MDL</span>
@@ -721,7 +722,7 @@ const bundlePlans = {
         <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="900" data-aos-duration="1000">
+    <div class="plan-card">
         <h4 class="plan-name">Pachet 5</h4>
         <div class="plan-price-container">
             <span class="plan-price">549 MDL</span>
@@ -738,7 +739,7 @@ const bundlePlans = {
     </div>
   `,
   orange: `
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
+    <div class="plan-card">
       <h4 class="plan-name">Fibră + TV OPTIM</h4>
       <div class="plan-price-container">
         <span class="plan-price">190 MDL</span>
@@ -753,7 +754,7 @@ const bundlePlans = {
       <a href="https://www.orange.md/ro/internet-si-tv" target="_blank" class="plan-button orange">Alege acest plan</a>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000">
+    <div class="plan-card">
       <h4 class="plan-name">Fibră + TV ULTRA</h4>
       <div class="plan-price-container">
         <span class="plan-price">250 MDL</span>
@@ -768,7 +769,7 @@ const bundlePlans = {
       <a href="https://www.orange.md/ro/internet-si-tv" target="_blank" class="plan-button orange">Alege acest plan</a>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="1000">
+    <div class="plan-card">
       <h4 class="plan-name">Fibră + TV ULTRA FTTR</h4>
       <div class="plan-price-container">
         <span class="plan-price">400 MDL</span>
@@ -783,7 +784,7 @@ const bundlePlans = {
       <a href="https://www.orange.md/ro/internet-si-tv" target="_blank" class="plan-button orange">Alege acest plan</a>
     </div>
 
-    <div class="plan-card" data-aos="zoom-in" data-aos-delay="700" data-aos-duration="1000">
+    <div class="plan-card">
       <h4 class="plan-name">Fibră + TV INFINITY</h4>
       <div class="plan-price-container">
         <span class="plan-price">600 MDL</span>
@@ -800,11 +801,13 @@ const bundlePlans = {
   `
 };
 
+// Initial content
 document.getElementById('mobilPlansPrepay').innerHTML = mobilPlansPrepay["orange"];
 document.getElementById('mobilPlansAbonament').innerHTML = mobilPlansAbonament["orange"];
 document.getElementById('internetPlans').innerHTML = internetPlans["starnet"];
 document.getElementById('bundlePlans').innerHTML = bundlePlans["starnet"];
 
+// --- UI: mobile menu toggle -------------------------------------------
 function toggleMenu() {
   const menu = document.getElementById('mobileMenu');
   const hamburger = document.querySelector('.hamburger');
@@ -812,70 +815,45 @@ function toggleMenu() {
   hamburger.classList.toggle('active');
 }
 
-
-function switchMobilTabPrepay(provider) {
+// --- Tabs: pass the clicked button (no use of global `event`) ---------
+function switchMobilTabPrepay(provider, btn) {
   document.getElementById('mobilPlansPrepay').innerHTML = mobilPlansPrepay[provider];
-  
   const buttons = document.querySelectorAll('.tabs.prepayTabs .tab-button');
-  buttons.forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
+  buttons.forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
 }
 
-function switchMobilTabAbonament(provider) {
+function switchMobilTabAbonament(provider, btn) {
   document.getElementById('mobilPlansAbonament').innerHTML = mobilPlansAbonament[provider];
-  
   const buttons = document.querySelectorAll('.tabs.abonamenteTabs .tab-button');
-  buttons.forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
+  buttons.forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
 }
 
-function switchInternetTab(provider) {
+function switchInternetTab(provider, btn) {
   document.getElementById('internetPlans').innerHTML = internetPlans[provider];
-  
   const buttons = document.querySelectorAll('#internet .tabs.internetTabs .tab-button');
-  buttons.forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
+  buttons.forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
 }
 
-function switchBundleTab(provider) {
+function switchBundleTab(provider, btn) {
   document.getElementById('bundlePlans').innerHTML = bundlePlans[provider];
-  
   const buttons = document.querySelectorAll('#internet_tv .tabs.bundleTabs .tab-button');
-  buttons.forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
+  buttons.forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
 }
 
-// Navigation to be blur after hero section
-
-window.addEventListener('scroll', () => {
-  const header = document.querySelector("header");
-  const nextSection = document.querySelector("#cum-functioneaza").offsetTop;
-  if(window.scrollY > nextSection - 10){
-    header.classList.add("scroll")
-  }else{
-    header.classList.remove("scroll")
-  }
-});
-
-/* ---------------------------
-   SNAP CONTROLLER (IIFE)
-   - slower, buttery scroll
-   - disables native snap during JS animation
-   - respects tall sections (scroll inside first)
-----------------------------*/
-
+// --- SNAP CONTROLLER: keep only the scrolling effect ------------------
 (() => {
-  // 🔧 Tweak these to taste
-  const SCROLL_DURATION = 2000;   // ms for the animated scroll between sections was 2000
-  const WHEEL_THRESHOLD = 80;     // ignore small wheel deltas (prevents accidental snaps)
-  const SWIPE_THRESHOLD = 40;     // px swipe required on touch
+  const SCROLL_DURATION = 1800; // ms
+  const WHEEL_THRESHOLD = 80;   // ignore small wheel deltas
+  const SWIPE_THRESHOLD = 40;   // px swipe required on touch
 
-  // Read sticky header height from CSS var
-  // const HEADER_H = parseInt(
-  //   getComputedStyle(document.documentElement).getPropertyValue('--header-height')
-  // ) || 0;
-  const HEADER_H = 0;
-  
+  const HEADER_H = parseInt(
+    getComputedStyle(document.documentElement).getPropertyValue('--header-height')
+  ) || 0;
+
   const sections = Array.from(document.querySelectorAll('.snap-section'));
   if (!sections.length) return;
 
@@ -897,16 +875,13 @@ window.addEventListener('scroll', () => {
     return best;
   }
 
-  // Smooth scroll with cubic-in-out easing
   function animateScrollTo(targetY, duration = SCROLL_DURATION) {
     const startY = window.scrollY;
     const delta = targetY - startY;
     if (Math.abs(delta) < 2) return Promise.resolve();
 
     const t0 = performance.now();
-    const ease = t => (t < 0.5)
-      ? 4 * t * t * t
-      : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    const ease = t => (t < 0.5) ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
     return new Promise(resolve => {
       function frame(t) {
@@ -929,7 +904,6 @@ window.addEventListener('scroll', () => {
     const nearTop = y - top < 32;
     const nearBottom = bottom - (y + window.innerHeight) < 32;
 
-    // If section is tall and we're not at its edge, keep native scroll inside it
     if (dir > 0 && !nearBottom && bottom - y > window.innerHeight) return i;
     if (dir < 0 && !nearTop && y - top > 0) return i;
 
@@ -940,22 +914,18 @@ window.addEventListener('scroll', () => {
   async function snap(dir) {
     if (locked) return;
     locked = true;
-
     const idx = targetIndex(dir);
     const y = topOf(sections[idx]);
-
-    // 🔕 turn OFF native CSS snap while JS animates (prevents the quick “jump” feel)
     document.documentElement.classList.add('is-snapping');
     await animateScrollTo(y, SCROLL_DURATION);
     document.documentElement.classList.remove('is-snapping');
-
-    setTimeout(() => { locked = false; }, 200);
+    setTimeout(() => { locked = false; }, 150);
   }
 
   // Wheel / trackpad
   function onWheel(e) {
     const magnitude = Math.abs(e.deltaY);
-    if (magnitude < WHEEL_THRESHOLD) return; // allow micro scrolls inside
+    if (magnitude < WHEEL_THRESHOLD) return;
     e.preventDefault();
     snap(e.deltaY > 0 ? 1 : -1);
   }
@@ -979,8 +949,7 @@ window.addEventListener('scroll', () => {
     if (startY == null) return;
     const dy = startY - e.touches[0].clientY;
     const dx = startX - e.touches[0].clientX;
-    if (Math.abs(dx) > Math.abs(dy)) return; // ignore horizontal
-
+    if (Math.abs(dx) > Math.abs(dy)) return;
     if (Math.abs(dy) > SWIPE_THRESHOLD) {
       e.preventDefault();
       snap(dy > 0 ? 1 : -1);

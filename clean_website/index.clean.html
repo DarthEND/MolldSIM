@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MolldSIM - Toate abonamentele într-un singur loc</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.clean.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <!-- Header -->
@@ -41,54 +40,25 @@
       <a href="#faq" class="mobile-menu-link" onclick="toggleMenu()">Întrebări</a>
     </div>
   </div>
+
   <main>
     <!-- Hero -->
-    <!-- <section class="hero snap-section full-height">
-      <div class="hero-content snap-anim">
+    <section class="hero snap-section full-height">
+      <div class="hero-content">
         <div>
           <h1>Toate abonamentele, <span class="hero-highlight">într-un singur loc</span>.</h1>
           <p>MolldSIM te ajută să compari rapid abonamente la telefonie mobilă, internet și Internet + TV — simplu, clar și prietenos.</p>
           <div class="hero-buttons">
-            <a href="#telefonie" class="btn-primary btn-large">Vezi planurile
-            </a>
+            <a href="#telefonie" class="btn-primary btn-large">Vezi planurile</a>
             <a href="#cum-functioneaza" class="btn-outline btn-large">Cum funcționează</a>
           </div>
         </div>
+        <div class="hero-img"></div>
       </div>
-      <div class="hero-img">
-        <div class="img"></div>
-        <img src="moldova.webp" alt="moldova">
-      </div>
+    </section>
 
-    </section> -->
-
-    <!-- Chat code generated -->
-     <section class="hero snap-section full-height">
-  <div class="hero-content snap-anim">
-    <div>
-      <h1>Toate abonamentele, <span class="hero-highlight">într-un singur loc</span>.</h1>
-      <p>MolldSIM te ajută să compari rapid abonamente la telefonie mobilă, internet și Internet + TV — simplu, clar și prietenos.</p>
-      <div class="hero-buttons">
-        <a href="#telefonie" class="btn-primary btn-large">Vezi planurile</a>
-        <a href="#cum-functioneaza" class="btn-outline btn-large">Cum funcționează</a>
-      </div>
-    </div>
-  </div>
-
-    <div class="map-wrap">
-      <!-- <img src="moldova.webp" alt="Harta Republicii Moldova" class="map-img"> -->
-
-      <!-- orbiting icons -->
-      <div class="orbit">
-        <i class="fa-solid fa-sim-card"></i>
-        <i class="fa-solid fa-wifi"></i>
-        <i class="fa-solid fa-tv"></i>
-      </div>
-    </div>
-</section>
-
-  <!-- How It Works -->
-    <section id="cum-functioneaza" class="how-it-works full-height snap-section snap-anim">
+    <!-- How It Works -->
+    <section id="cum-functioneaza" class="how-it-works full-height snap-section">
       <div class="container">
         <div class="section-header">
           <p class="kicker">Cum funcționează</p>
@@ -97,33 +67,27 @@
         </div>
 
         <div class="how-it-works-grid">
-          <div class="step-card" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
+          <div class="step-card">
             <div class="step-icon-wrapper">
-              <div class="step-icon" style="background: linear-gradient(135deg, #e3f2fd, #bbdefb);">
-                🔍
-              </div>
+              <div class="step-icon" style="background: linear-gradient(135deg, #e3f2fd, #bbdefb);">🔍</div>
               <span class="step-number">1</span>
             </div>
             <h3 class="step-title">Explorează categoriile</h3>
             <p class="step-description">Alege între Telefonie mobilă, Internet sau Internet + TV. Fiecare secțiune îți arată operatorii disponibili.</p>
           </div>
 
-          <div class="step-card" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">
+          <div class="step-card">
             <div class="step-icon-wrapper">
-              <div class="step-icon" style="background: linear-gradient(135deg, #f3e5f5, #e1bee7);">
-                ⚖️
-              </div>
+              <div class="step-icon" style="background: linear-gradient(135deg, #f3e5f5, #e1bee7);">⚖️</div>
               <span class="step-number">2</span>
             </div>
             <h3 class="step-title">Compară planurile</h3>
             <p class="step-description">Vezi prețuri, viteze, minute și beneficii unul lângă altul. Identifică rapid ce se potrivește nevoilor tale.</p>
           </div>
 
-          <div class="step-card" data-aos="zoom-in" data-aos-delay="700" data-aos-duration="1000">
+          <div class="step-card">
             <div class="step-icon-wrapper">
-              <div class="step-icon" style="background: linear-gradient(135deg, #fff3e0, #ffe0b2);">
-                ✅
-              </div>
+              <div class="step-icon" style="background: linear-gradient(135deg, #fff3e0, #ffe0b2);">✅</div>
               <span class="step-number">3</span>
             </div>
             <h3 class="step-title">Alege și activează</h3>
@@ -136,50 +100,45 @@
     <!-- Telefonie Mobilă Section -->
     <section id="telefonie">
       <section id="prepay" class="mobile-section snap-section full-height">
-        <!-- Prepay -->
-        <div class="subsection snap-anim">
+        <div class="subsection">
           <div class="container">
             <div class="section-header">
               <p class="kicker">Telefonie mobilă Prepay</p>
               <h2 class="section-title">Alege operatorul, găsește planul</h2>
               <p class="section-subtitle">Compară traficul de date, minutele și beneficiile incluse.</p>
             </div>
-    
+
             <div class="tabs-container">
               <div class="tabs prepayTabs">
-                <button class="tab-button active" onclick="switchMobilTabPrepay('orange')">Orange</button>
-                <button class="tab-button" onclick="switchMobilTabPrepay('moldcell')">Moldcell</button>
-                <button class="tab-button" onclick="switchMobilTabPrepay('moldtelecom')">Moldtelecom</button>
+                <button class="tab-button active" onclick="switchMobilTabPrepay('orange', this)">Orange</button>
+                <button class="tab-button" onclick="switchMobilTabPrepay('moldcell', this)">Moldcell</button>
+                <button class="tab-button" onclick="switchMobilTabPrepay('moldtelecom', this)">Moldtelecom</button>
               </div>
             </div>
-    
-            <div class="plans-grid" id="mobilPlansPrepay">
-                      
-            </div>
+
+            <div class="plans-grid" id="mobilPlansPrepay"></div>
           </div>
         </div>
       </section>
+
       <section id="abonamente" class="mobile-section snap-section full-height">
-        <!-- Abonamente -->
-        <div class="subsection snap-anim">
+        <div class="subsection">
           <div class="container">
-            <div id="abonamente" class="section-header">
+            <div class="section-header">
               <p class="kicker">Telefonie mobilă Abonament</p>
               <h2 class="section-title">Alege operatorul, găsește planul</h2>
               <p class="section-subtitle">Compară traficul de date, minutele și beneficiile incluse.</p>
             </div>
-    
+
             <div class="tabs-container">
               <div class="tabs abonamenteTabs">
-                <button class="tab-button active" onclick="switchMobilTabAbonament('orange')">Orange</button>
-                <button class="tab-button" onclick="switchMobilTabAbonament('moldcell')">Moldcell</button>
-                <button class="tab-button" onclick="switchMobilTabAbonament('moldtelecom')">Moldtelecom</button>
+                <button class="tab-button active" onclick="switchMobilTabAbonament('orange', this)">Orange</button>
+                <button class="tab-button" onclick="switchMobilTabAbonament('moldcell', this)">Moldcell</button>
+                <button class="tab-button" onclick="switchMobilTabAbonament('moldtelecom', this)">Moldtelecom</button>
               </div>
             </div>
-    
-            <div class="plans-grid" id="mobilPlansAbonament">
-              
-            </div>
+
+            <div class="plans-grid" id="mobilPlansAbonament"></div>
           </div>
         </div>
       </section>
@@ -188,66 +147,60 @@
     <!-- Internet Section -->
     <section class="internet-section">
       <section id="internet" class="internet-section snap-section full-height">
-        <!-- Internet -->
-        <div class="subsection snap-anim">
+        <div class="subsection">
           <div class="container">
             <div class="section-header">
               <p class="kicker">Internet</p>
               <h2 class="section-title">Stabil, rapid și la preț corect</h2>
               <p class="section-subtitle">Selectează furnizorul și vezi vitezele disponibile la adresa ta.</p>
             </div>
-    
+
             <div class="tabs-container">
               <div class="tabs internetTabs">
-                <button class="tab-button active" onclick="switchInternetTab('starnet')">StarNet</button>
-                <button class="tab-button" onclick="switchInternetTab('orange')">Orange</button>
-                <button class="tab-button" onclick="switchInternetTab('moldtelecom')">Moldtelecom</button>
+                <button class="tab-button active" onclick="switchInternetTab('starnet', this)">StarNet</button>
+                <button class="tab-button" onclick="switchInternetTab('orange', this)">Orange</button>
+                <button class="tab-button" onclick="switchInternetTab('moldtelecom', this)">Moldtelecom</button>
               </div>
             </div>
-    
-            <div class="plans-grid" id="internetPlans">
-              
-            </div>
+
+            <div class="plans-grid" id="internetPlans"></div>
           </div>
         </div>
       </section>
+
       <section id="internet_tv" class="internet-section snap-section full-height">
-        <!-- Internet + TV -->
-        <div class="subsection snap-anim">
+        <div class="subsection">
           <div class="container">
-            <div id="internet_tv" class="section-header">
+            <div class="section-header">
               <p class="kicker">Internet + TV</p>
               <h2 class="section-title">Canale și viteză pentru toată familia</h2>
               <p class="section-subtitle">Alege pachetul complet care ți se potrivește.</p>
             </div>
-    
+
             <div class="tabs-container">
               <div class="tabs bundleTabs">
-                <button class="tab-button active" onclick="switchBundleTab('starnet')">StarNet</button>
-                <button class="tab-button" onclick="switchBundleTab('moldtelecom')">Moldtelecom</button>
-                <button class="tab-button" onclick="switchBundleTab('orange')">Orange</button>
+                <button class="tab-button active" onclick="switchBundleTab('starnet', this)">StarNet</button>
+                <button class="tab-button" onclick="switchBundleTab('moldtelecom', this)">Moldtelecom</button>
+                <button class="tab-button" onclick="switchBundleTab('orange', this)">Orange</button>
               </div>
             </div>
-    
-            <div class="plans-grid" id="bundlePlans">
-            
-            </div>
+
+            <div class="plans-grid" id="bundlePlans"></div>
           </div>
         </div>
       </section>
     </section>
-      
 
     <!-- FAQ -->
     <section id="faq" class="faq-container snap-section full-height">
-      <div class="section-header snap-anim">
+      <div class="section-header">
         <p class="kicker">Întrebări frecvente</p>
         <h2 class="section-title">Tot ce vrei să știi</h2>
         <p class="section-subtitle">Dacă ai altă întrebare, scrie-ne și te ajutăm rapid.</p>
       </div>
 
       <div class="faq-list">
-        <details class="faq-item" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
+        <details class="faq-item">
           <summary class="faq-question">
             Cum funcționează MolldSIM?
             <span class="faq-toggle">+</span>
@@ -255,7 +208,7 @@
           <div class="faq-answer">Navighezi pe secțiuni (Mobil, Internet, Internet + TV), alegi operatorul din tab-uri și compari planurile.</div>
         </details>
 
-        <details class="faq-item" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000">
+        <details class="faq-item">
           <summary class="faq-question">
             Prețurile sunt finale?
             <span class="faq-toggle">+</span>
@@ -263,7 +216,7 @@
           <div class="faq-answer">Sunt orientative. Pot varia în funcție de promoții, echipamente sau adresă.</div>
         </details>
 
-        <details class="faq-item" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="1000">
+        <details class="faq-item">
           <summary class="faq-question">
             Pot activa direct un abonament?
             <span class="faq-toggle">+</span>
@@ -276,7 +229,7 @@
 
   <!-- Footer -->
   <footer>
-    <div class="footer-content snap-section snap-anim">
+    <div class="footer-content snap-section">
       <div class="footer-section">
         <h4>MolldSIM</h4>
         <p>Compară abonamente simplu și prietenos.</p>
@@ -309,10 +262,6 @@
     <div class="footer-copyright">© 2025 MolldSIM. Toate drepturile rezervate.</div>
   </footer>
 
-  <script src="script.js"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+  <script src="script.clean.js"></script>
 </body>
 </html>
