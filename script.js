@@ -209,7 +209,7 @@ const mobilPlansPrepay = {
         <a href="https://new.moldtelecom.md/ro/prepay" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
         <p class="plan-note">Valabile 14 zile.</p>
     </div>
-  ` 
+  `,
 };
 
 const mobilPlansAbonament = {
@@ -443,7 +443,7 @@ const mobilPlansAbonament = {
         </ul>
         <a href="https://new.moldtelecom.md/ro/mobile" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
     </div>
-  ` 
+  `,
 };
 
 const internetPlans = {
@@ -606,7 +606,7 @@ const internetPlans = {
         <a href="https://new.moldtelecom.md/ro/internet" target="_blank" class="plan-button moldtelecom">Alege acest plan</a>
         <p class="plan-note">Contract 12 luni. Prețurile sunt orientative.</p>
     </div>
-  `
+  `,
 };
 
 const bundlePlans = {
@@ -797,63 +797,70 @@ const bundlePlans = {
       </ul>
       <a href="https://www.orange.md/ro/internet-si-tv" target="_blank" class="plan-button orange">Alege acest plan</a>
     </div>
-  `
+  `,
 };
 
-document.getElementById('mobilPlansPrepay').innerHTML = mobilPlansPrepay["orange"];
-document.getElementById('mobilPlansAbonament').innerHTML = mobilPlansAbonament["orange"];
-document.getElementById('internetPlans').innerHTML = internetPlans["starnet"];
-document.getElementById('bundlePlans').innerHTML = bundlePlans["starnet"];
+document.getElementById("mobilPlansPrepay").innerHTML =
+  mobilPlansPrepay["orange"];
+document.getElementById("mobilPlansAbonament").innerHTML =
+  mobilPlansAbonament["orange"];
+document.getElementById("internetPlans").innerHTML = internetPlans["starnet"];
+document.getElementById("bundlePlans").innerHTML = bundlePlans["starnet"];
 
 function toggleMenu() {
-  const menu = document.getElementById('mobileMenu');
-  const hamburger = document.querySelector('.hamburger');
-  menu.classList.toggle('active');
-  hamburger.classList.toggle('active');
+  const menu = document.getElementById("mobileMenu");
+  const hamburger = document.querySelector(".hamburger");
+  menu.classList.toggle("active");
+  hamburger.classList.toggle("active");
 }
 
-
 function switchMobilTabPrepay(provider) {
-  document.getElementById('mobilPlansPrepay').innerHTML = mobilPlansPrepay[provider];
-  
-  const buttons = document.querySelectorAll('.tabs.prepayTabs .tab-button');
-  buttons.forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
+  document.getElementById("mobilPlansPrepay").innerHTML =
+    mobilPlansPrepay[provider];
+
+  const buttons = document.querySelectorAll(".tabs.prepayTabs .tab-button");
+  buttons.forEach((btn) => btn.classList.remove("active"));
+  event.target.classList.add("active");
 }
 
 function switchMobilTabAbonament(provider) {
-  document.getElementById('mobilPlansAbonament').innerHTML = mobilPlansAbonament[provider];
-  
-  const buttons = document.querySelectorAll('.tabs.abonamenteTabs .tab-button');
-  buttons.forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
+  document.getElementById("mobilPlansAbonament").innerHTML =
+    mobilPlansAbonament[provider];
+
+  const buttons = document.querySelectorAll(".tabs.abonamenteTabs .tab-button");
+  buttons.forEach((btn) => btn.classList.remove("active"));
+  event.target.classList.add("active");
 }
 
 function switchInternetTab(provider) {
-  document.getElementById('internetPlans').innerHTML = internetPlans[provider];
-  
-  const buttons = document.querySelectorAll('#internet .tabs.internetTabs .tab-button');
-  buttons.forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
+  document.getElementById("internetPlans").innerHTML = internetPlans[provider];
+
+  const buttons = document.querySelectorAll(
+    "#internet .tabs.internetTabs .tab-button"
+  );
+  buttons.forEach((btn) => btn.classList.remove("active"));
+  event.target.classList.add("active");
 }
 
 function switchBundleTab(provider) {
-  document.getElementById('bundlePlans').innerHTML = bundlePlans[provider];
-  
-  const buttons = document.querySelectorAll('#internet_tv .tabs.bundleTabs .tab-button');
-  buttons.forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
+  document.getElementById("bundlePlans").innerHTML = bundlePlans[provider];
+
+  const buttons = document.querySelectorAll(
+    "#internet_tv .tabs.bundleTabs .tab-button"
+  );
+  buttons.forEach((btn) => btn.classList.remove("active"));
+  event.target.classList.add("active");
 }
 
 // Navigation to be blur after hero section
 
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
   const header = document.querySelector("header");
   const nextSection = document.querySelector("#cum-functioneaza").offsetTop;
-  if(window.scrollY > nextSection - 10){
-    header.classList.add("scroll")
-  }else{
-    header.classList.remove("scroll")
+  if (window.scrollY > nextSection - 10) {
+    header.classList.add("scroll");
+  } else {
+    header.classList.remove("scroll");
   }
 });
 
@@ -875,7 +882,7 @@ window.addEventListener('scroll', () => {
 //   //   getComputedStyle(document.documentElement).getPropertyValue('--header-height')
 //   // ) || 0;
 //   const HEADER_H = 0;
-  
+
 //   const sections = Array.from(document.querySelectorAll('.snap-section'));
 //   if (!sections.length) return;
 
