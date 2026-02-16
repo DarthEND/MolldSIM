@@ -411,7 +411,7 @@ section:nth-child(even) {
   border-radius: 12px;
   border: none;
   font-weight: 600;
-  color: var(--charcoal);
+  /* color: var(--charcoal); */
   cursor: pointer;
   display: block;
   text-decoration: none;
@@ -421,6 +421,7 @@ section:nth-child(even) {
 .orange {
   border: 1px solid var(--orange);
   background-color: transparent;
+  color: var(--orange);
 }
 
 .orange:hover {
@@ -431,6 +432,7 @@ section:nth-child(even) {
 .moldcell {
   border: 1px solid var(--moldcell);
   background-color: transparent;
+  color: var(--moldcell);
 }
 
 .moldcell:hover {
@@ -441,6 +443,7 @@ section:nth-child(even) {
 .moldtelecom {
   border: 1px solid var(--moldtelecom);
   background-color: transparent;
+  color: var(--moldtelecom);
 }
 
 .moldtelecom:hover {
@@ -451,6 +454,7 @@ section:nth-child(even) {
 .starnet {
   border: 1px solid var(--starnet);
   background-color: transparent;
+  color: var(--starnet);
 }
 
 .starnet:hover {
