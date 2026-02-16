@@ -188,6 +188,12 @@ section:nth-child(even) {
   border-radius: 16px;
 }
 
+.step-card a.btn-primary:hover{
+  text-decoration: none;
+  color: white;
+  background-color: var(--orange);
+}
+
 .step-card:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
