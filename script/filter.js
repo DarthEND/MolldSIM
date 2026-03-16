@@ -12,24 +12,24 @@
   function applyFilters() {
     const cards = getCards();
 
-    // Operator checkboxes — if none checked treat as "all"
+    // Operatori bifați (gol = toți)
     const checkedOps = Array.from(
       document.querySelectorAll('.operator-checkbox:checked')
     ).map(cb => cb.value);
 
-    // Price slider — max price the user accepts
+    // Preț maxim
     const priceSlider = document.getElementById('filter-price');
     const maxPrice = priceSlider ? parseInt(priceSlider.value, 10) : Infinity;
 
-    // Speed slider — min Mbps (internet / internet+tv pages)
+    // Viteză minimă (internet)
     const speedSlider = document.getElementById('filter-speed');
     const minSpeed = speedSlider ? parseInt(speedSlider.value, 10) : 0;
 
-    // Data slider — min GB (prepay / abonament / internet pages)
+    // Date minime (GB)
     const dataSlider = document.getElementById('filter-data');
     const minData = dataSlider ? parseInt(dataSlider.value, 10) : 0;
 
-    // Sort
+    // Sortare
     const sortSelect = document.getElementById('filter-sort');
     const sortVal = sortSelect ? sortSelect.value : 'default';
 
@@ -53,7 +53,7 @@
       }
     });
 
-    // Sort visible cards
+    // Sortează cardurile vizibile
     const grid = document.getElementById('plans-grid');
     if (grid) {
       visible.sort((a, b) => {
@@ -89,27 +89,27 @@
   }
 
   function init() {
-    // Record original order
+    // Salvăm ordinea inițială
     getCards().forEach((card, i) => { card.dataset.index = i; });
 
-    // Bind operator checkboxes
+    // Checkbox-uri operatori
     document.querySelectorAll('.operator-checkbox').forEach(cb => {
       cb.addEventListener('change', applyFilters);
     });
 
-    // Bind sliders and sort select
+    // Filtre și sortare
     ['filter-price', 'filter-speed', 'filter-data', 'filter-sort'].forEach(id => {
       const el = document.getElementById(id);
       if (el) el.addEventListener('input', applyFilters);
       if (el) el.addEventListener('change', applyFilters);
     });
 
-    // Live slider labels
+    // Etichete slider
     bindSliderLabel('filter-price', 'price-label', ' MDL');
     bindSliderLabel('filter-speed', 'speed-label', ' Mbps');
     bindSliderLabel('filter-data',  'data-label',  ' GB');
 
-    // Reset
+    // Buton resetare
     const resetBtn = document.getElementById('filter-reset');
     if (resetBtn) {
       resetBtn.addEventListener('click', () => {

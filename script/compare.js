@@ -1,8 +1,8 @@
 (function () {
   'use strict';
 
-  var STORAGE_KEY = 'moldsim_compare';
-  var MAX_PLANS   = 4;
+  const STORAGE_KEY = 'moldsim_compare';
+  const MAX_PLANS   = 4;
 
 
   function loadPlans() {
@@ -22,7 +22,7 @@
   }
 
   function addPlan(plan) {
-    var plans = loadPlans();
+    let plans = loadPlans();
     if (plans.length >= MAX_PLANS) return false;
     if (plans.some(function (p) { return p.id === plan.id; })) return false;
     plans.push(plan);
@@ -31,7 +31,7 @@
   }
 
   function removePlan(planId) {
-    var plans = loadPlans().filter(function (p) { return p.id !== planId; });
+    let plans = loadPlans().filter(function (p) { return p.id !== planId; });
     savePlans(plans);
   }
 
@@ -39,23 +39,21 @@
     localStorage.removeItem(STORAGE_KEY);
   }
 
-  /* ── Extract plan data from a .plan-card DOM element ─────────────────── */
-
   function extractPlan(card) {
-    var badge     = card.querySelector('.operator-badge');
-    var nameEl    = card.querySelector('.plan-name');
-    var priceEl   = card.querySelector('.plan-price');
-    var periodEl  = card.querySelector('.plan-period');
-    var btn       = card.querySelector('.plan-button');
-    var features  = Array.from(card.querySelectorAll('.plan-features li'))
+    let badge     = card.querySelector('.operator-badge');
+    let nameEl    = card.querySelector('.plan-name');
+    let priceEl   = card.querySelector('.plan-price');
+    let periodEl  = card.querySelector('.plan-period');
+    let btn       = card.querySelector('.plan-button');
+    let features  = Array.from(card.querySelectorAll('.plan-features li'))
                         .map(function (li) { return li.textContent.trim(); });
 
-    var operatorName  = badge  ? badge.textContent.trim()  : (card.dataset.operator || '');
-    var operatorColor = badge  ? (badge.style.background || '#555') : '#555';
+    let operatorName  = badge  ? badge.textContent.trim()  : (card.dataset.operator || '');
+    let operatorColor = badge  ? (badge.style.background || '#555') : '#555';
 
-    // Build a stable ID from operator + name
-    var planName = nameEl ? nameEl.textContent.trim() : '';
-    var id = (operatorName + '_' + planName).replace(/\s+/g, '_').toLowerCase();
+    // ID unic din operator + nume
+    let planName = nameEl ? nameEl.textContent.trim() : '';
+    let id = `${operatorName}_${planName}`.replace(/\s+/g, '_').toLowerCase();
 
     return {
       id:            id,
@@ -73,22 +71,20 @@
     };
   }
 
-  /* ── Plan pages: inject compare buttons + floating bar ──────────────── */
-
   function initPlanPages() {
-    var cards = document.querySelectorAll('.plan-card');
+    let cards = document.querySelectorAll('.plan-card');
     if (!cards.length) return;
 
-    // Inject a compare button into each card
+    // Adaugă buton de comparare la fiecare card
     cards.forEach(function (card) {
-      var btn = document.createElement('button');
+      let btn = document.createElement('button');
       btn.className = 'compare-btn';
       btn.textContent = '+ Adaugă la comparare';
 
-      var plan = extractPlan(card);
+      let plan = extractPlan(card);
       btn.dataset.planId = plan.id;
 
-      // Restore selected state on load
+      // Restabilește starea la încărcare
       if (isSelected(plan.id)) {
         btn.classList.add('selected');
         btn.textContent = '✓ Adăugat';
@@ -96,17 +92,17 @@
 
       btn.addEventListener('click', function () {
         if (isSelected(plan.id)) {
-          // Deselect
+          // Deselectează
           removePlan(plan.id);
           btn.classList.remove('selected');
           btn.textContent = '+ Adaugă la comparare';
         } else {
-          var added = addPlan(plan);
+          let added = addPlan(plan);
           if (added) {
             btn.classList.add('selected');
             btn.textContent = '✓ Adăugat';
           } else {
-            // Max reached — flash button
+            // Limită atinsă — afișează mesaj
             btn.textContent = 'Max 4 planuri!';
             setTimeout(function () {
               btn.textContent = '+ Adaugă la comparare';
@@ -119,19 +115,19 @@
       card.appendChild(btn);
     });
 
-    // Build floating compare bar
-    var bar = document.createElement('div');
+    // Bara flotantă de comparare
+    let bar = document.createElement('div');
     bar.id = 'compare-bar';
     bar.innerHTML =
-      '<span id="compare-bar-label"></span>' +
-      '<div id="compare-bar-slots"></div>' +
-      '<a id="compare-bar-go" href="compare.html">Compară acum</a>' +
-      '<button id="compare-bar-clear">Șterge tot</button>';
+      `<span id="compare-bar-label"></span>
+      <div id="compare-bar-slots"></div>
+      <a id="compare-bar-go" href="compare.html">Compară acum</a>
+      <button id="compare-bar-clear">Șterge tot</button>`;
     document.body.appendChild(bar);
 
     document.getElementById('compare-bar-clear').addEventListener('click', function () {
       clearPlans();
-      // Deselect all buttons on the page
+      // Deselectează toate butoanele
       document.querySelectorAll('.compare-btn.selected').forEach(function (b) {
         b.classList.remove('selected');
         b.textContent = '+ Adaugă la comparare';
@@ -143,33 +139,33 @@
   }
 
   function updateBar() {
-    var bar = document.getElementById('compare-bar');
+    let bar = document.getElementById('compare-bar');
     if (!bar) return;
 
-    var plans = loadPlans();
-    var count = plans.length;
+    let plans = loadPlans();
+    let count = plans.length;
 
-    // Sync button states (in case of cross-tab, etc.)
+    // Sincronizează butoanele (inclusiv alte tab-uri)
     document.querySelectorAll('.compare-btn').forEach(function (btn) {
-      var selected = plans.some(function (p) { return p.id === btn.dataset.planId; });
+      let selected = plans.some(function (p) { return p.id === btn.dataset.planId; });
       btn.classList.toggle('selected', selected);
       btn.textContent = selected ? '✓ Adăugat' : '+ Adaugă la comparare';
     });
 
-    // Label
-    var label = document.getElementById('compare-bar-label');
+    // Eticheta barei
+    let label = document.getElementById('compare-bar-label');
     if (label) {
       label.textContent = count === 0
         ? 'Niciun plan selectat'
-        : count + ' plan' + (count > 1 ? 'uri' : '') + ' selectat' + (count > 1 ? 'e' : '');
+        : `${count} plan${count > 1 ? 'uri' : ''} selectat${count > 1 ? 'e' : ''}`;
     }
 
-    // Slots
-    var slots = document.getElementById('compare-bar-slots');
+    // Punctele de slot
+    let slots = document.getElementById('compare-bar-slots');
     if (slots) {
       slots.innerHTML = '';
-      for (var i = 0; i < MAX_PLANS; i++) {
-        var dot = document.createElement('span');
+      for (let i = 0; i < MAX_PLANS; i++) {
+        let dot = document.createElement('span');
         dot.className = 'compare-slot' + (i < count ? ' filled' : '');
         slots.appendChild(dot);
       }
@@ -179,19 +175,19 @@
   }
 
   function initComparePage() {
-    var root = document.getElementById('compare-root');
+    let root = document.getElementById('compare-root');
     if (!root) return;
 
     renderCompareTable(root);
 
-    // Listen for storage events (if user removes a plan in another tab)
+    // Actualizează la modificări din alt tab
     window.addEventListener('storage', function (e) {
       if (e.key === STORAGE_KEY) renderCompareTable(root);
     });
   }
 
   function renderCompareTable(root) {
-    var plans = loadPlans();
+    let plans = loadPlans();
     root.innerHTML = '';
 
     if (plans.length === 0) {
@@ -203,13 +199,11 @@
       return;
     }
 
-    /* ── Collect all feature keys ── */
-    // We detect page type from the first plan
-    var isInternet = plans[0] && plans[0].type === 'internet';
+    // Detectăm tipul paginii din primul plan
+    let isInternet = plans[0] && plans[0].type === 'internet';
 
-    // Build a row-by-row structure
-    // Each plan's features are free-text. We normalise to known rows.
-    var ROWS = isInternet
+    // Rândurile tabelului de comparare
+    let ROWS = isInternet
       ? [
           { key: 'price',    label: '💰 Preț lunar'   },
           { key: 'speed',    label: '🚀 Viteză'        },
@@ -227,9 +221,9 @@
           { key: 'validity', label: '⏱️ Valabilitate'  },
         ];
 
-    // Extract a value from a features array for a given key
+    // Caută o caracteristică după emoji
     function findFeature(features, emoji) {
-      var line = features.find(function (f) { return f.indexOf(emoji) === 0; });
+      let line = features.find(function (f) { return f.indexOf(emoji) === 0; });
       return line ? line.replace(emoji, '').replace(/^[\s:]+/, '') : '—';
     }
 
@@ -261,105 +255,103 @@
           return '—';
       }
     }
-
-    /* ── Find best numeric value per row (for highlighting) ── */
+ 
     function bestIndex(plans, key) {
       if (key === 'price') {
-        // lower is better
-        var vals = plans.map(function (p) { return parseInt(p.priceVal, 10) || 9999; });
-        var min  = Math.min.apply(null, vals);
+        // preț mai mic = mai bun
+        let vals = plans.map(function (p) { return parseInt(p.priceVal, 10) || 9999; });
+        let min  = Math.min.apply(null, vals);
         return vals.map(function (v) { return v === min; });
       }
       if (key === 'data') {
-        var vals = plans.map(function (p) { return parseInt(p.dataVal, 10) || 0; });
-        var max  = Math.max.apply(null, vals);
+        let vals = plans.map(function (p) { return parseInt(p.dataVal, 10) || 0; });
+        let max  = Math.max.apply(null, vals);
         return vals.map(function (v) { return max > 0 && v === max; });
       }
       if (key === 'speed') {
-        var vals = plans.map(function (p) { return parseInt(p.speedVal, 10) || 0; });
-        var max  = Math.max.apply(null, vals);
+        let vals = plans.map(function (p) { return parseInt(p.speedVal, 10) || 0; });
+        let max  = Math.max.apply(null, vals);
         return vals.map(function (v) { return max > 0 && v === max; });
       }
       return plans.map(function () { return false; });
     }
 
-    /* ── Build table ── */
-    var table = document.createElement('table');
+    // Construim tabelul
+    let table = document.createElement('table');
     table.className = 'compare-table';
 
-    // -- THEAD --
-    var thead = document.createElement('thead');
-    var headRow = document.createElement('tr');
+    // Antet tabel
+    let thead = document.createElement('thead');
+    let headRow = document.createElement('tr');
 
-    // Label column
-    var thLabel = document.createElement('th');
+    // Coloana cu etichete
+    let thLabel = document.createElement('th');
     thLabel.textContent = 'Caracteristică';
     headRow.appendChild(thLabel);
 
-    // One column per plan
+    // O coloană per plan
     plans.forEach(function (plan) {
-      var th = document.createElement('th');
+      let th = document.createElement('th');
       th.innerHTML =
-        '<div class="compare-plan-header">' +
-          '<span class="operator-badge" style="background:' + plan.operatorColor + '">' + plan.operator + '</span>' +
-          '<div class="compare-plan-name">' + plan.name + '</div>' +
-          '<div class="compare-plan-price-big">' + plan.price + ' <span class="compare-plan-period">' + plan.period + '</span></div>' +
-          '<button class="compare-remove-btn" data-plan-id="' + plan.id + '">✕ Elimină</button>' +
-        '</div>';
+        `<div class="compare-plan-header">
+          <span class="operator-badge" style="background:${plan.operatorColor}">${plan.operator}</span>
+          <div class="compare-plan-name">${plan.name}</div>
+          <div class="compare-plan-price-big">${plan.price} <span class="compare-plan-period">${plan.period}</span></div>
+          <button class="compare-remove-btn" data-plan-id="${plan.id}">✕ Elimină</button>
+        </div>`;
       headRow.appendChild(th);
     });
 
-    // Add plan slot (if room)
+    // Slot pentru plan nou (dacă mai e loc)
     if (plans.length < MAX_PLANS) {
-      var thAdd = document.createElement('th');
+      let thAdd = document.createElement('th');
       thAdd.className = 'compare-add-col';
       thAdd.innerHTML =
-        '<a class="compare-add-btn" href="prepay.html">' +
-          '<span class="compare-add-icon">＋</span>' +
-          'Adaugă un plan' +
-        '</a>';
+        `<a class="compare-add-btn" href="prepay.html">
+          <span class="compare-add-icon">＋</span>
+          Adaugă un plan
+        </a>`;
       headRow.appendChild(thAdd);
     }
 
     thead.appendChild(headRow);
     table.appendChild(thead);
 
-    // -- TBODY rows --
-    var tbody = document.createElement('tbody');
+    // Rândurile tabelului
+    let tbody = document.createElement('tbody');
 
     ROWS.forEach(function (row) {
-      var tr = document.createElement('tr');
+      let tr = document.createElement('tr');
 
-      var th = document.createElement('th');
+      let th = document.createElement('th');
       th.textContent = row.label;
       tr.appendChild(th);
 
-      var best = bestIndex(plans, row.key);
+      let best = bestIndex(plans, row.key);
 
       plans.forEach(function (plan, idx) {
-        var td = document.createElement('td');
+        let td = document.createElement('td');
         td.textContent = getRowValue(plan, row.key);
         if (best[idx]) td.classList.add('best-value');
         tr.appendChild(td);
       });
 
       if (plans.length < MAX_PLANS) {
-        tr.appendChild(document.createElement('td')); // empty add-col cell
+        tr.appendChild(document.createElement('td')); // celulă goală
       }
 
       tbody.appendChild(tr);
     });
 
-    // -- CTA row --
-    var ctaRow = document.createElement('tr');
+    // Rândul cu butoane de activare
+    let ctaRow = document.createElement('tr');
     ctaRow.className = 'compare-cta-row';
-    ctaRow.appendChild(document.createElement('th')); // empty label cell
+    ctaRow.appendChild(document.createElement('th')); // celulă goală
 
     plans.forEach(function (plan) {
-      var td = document.createElement('td');
+      let td = document.createElement('td');
       td.innerHTML =
-        '<a href="' + plan.link + '" class="plan-button ' + plan.operator.toLowerCase() + '" target="_blank" ' +
-        'style="display:inline-block;width:auto;padding:0.5rem 1.2rem;">Alege planul</a>';
+        `<a href="${plan.link}" class="plan-button ${plan.operator.toLowerCase()}" target="_blank" style="display:inline-block;width:auto;padding:0.5rem 1.2rem;">Alege planul</a>`;
       ctaRow.appendChild(td);
     });
 
@@ -370,16 +362,16 @@
     tbody.appendChild(ctaRow);
     table.appendChild(tbody);
 
-    /* ── Wrap and render ── */
-    var wrap = document.createElement('div');
+    // Afișăm tabelul
+    let wrap = document.createElement('div');
     wrap.className = 'compare-table-wrap';
     wrap.appendChild(table);
     root.appendChild(wrap);
 
-    // Clear all button
-    var clearWrap = document.createElement('div');
+    // Buton de ștergere totală
+    let clearWrap = document.createElement('div');
     clearWrap.style.cssText = 'text-align:right;margin-top:1rem;';
-    var clearBtn = document.createElement('button');
+    let clearBtn = document.createElement('button');
     clearBtn.className = 'filter-reset-btn';
     clearBtn.textContent = 'Șterge toate planurile';
     clearBtn.addEventListener('click', function () {
@@ -389,7 +381,7 @@
     clearWrap.appendChild(clearBtn);
     root.appendChild(clearWrap);
 
-    // Remove-plan buttons
+    // Butoane de eliminare a planului
     root.querySelectorAll('.compare-remove-btn').forEach(function (btn) {
       btn.addEventListener('click', function () {
         removePlan(btn.dataset.planId);
