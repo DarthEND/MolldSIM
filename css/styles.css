@@ -603,3 +603,562 @@ footer {
     grid-template-columns: 2fr 1fr 1fr 1fr;
   }
 }
+
+/* ─────────────────────────────────────────
+   FILTER LAYOUT — aside + main content
+───────────────────────────────────────── */
+
+.page-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Sidebar */
+.filter-aside {
+  position: sticky;
+  top: calc(var(--header-height) + 1.5rem);
+  width: 240px;
+  flex-shrink: 0;
+  background: var(--white);
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.filter-aside h3 {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+  margin-bottom: 1rem;
+}
+
+/* Each filter group */
+.filter-group {
+  margin-bottom: 1.5rem;
+}
+
+.filter-group:last-of-type {
+  margin-bottom: 0;
+}
+
+.filter-group label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Operator checkboxes */
+.operator-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.operator-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  padding: 0.3rem 0.5rem;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.operator-option:hover {
+  background: var(--fog);
+}
+
+.operator-option input[type="checkbox"] {
+  accent-color: var(--magenta);
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.op-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Price & Data range slider */
+.range-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.filter-range {
+  width: 100%;
+  accent-color: var(--magenta);
+  cursor: pointer;
+}
+
+/* Sort select */
+.filter-select {
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #374151;
+  background: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.18s;
+}
+
+.filter-select:focus {
+  border-color: var(--magenta);
+}
+
+/* Results count + reset */
+.filter-footer {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-count {
+  font-size: 0.78rem;
+  color: #9ca3af;
+  font-weight: 600;
+  text-align: center;
+}
+
+.filter-reset-btn {
+  width: 100%;
+  padding: 0.45rem 0;
+  border-radius: 8px;
+  border: 1.5px solid #e5e7eb;
+  background: #f9fafb;
+  color: #374151;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.filter-reset-btn:hover {
+  background: #fee2e2;
+  border-color: #fca5a5;
+  color: #dc2626;
+}
+
+/* Plans content area */
+.plans-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Unified plans grid (all operators mixed) */
+.plans-grid-all {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+/* Operator badge on each card */
+.operator-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  color: #fff;
+  margin-bottom: 0.6rem;
+}
+
+/* Hidden card */
+.plan-card.is-hidden {
+  display: none;
+}
+
+/* Animate card reveal */
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.plan-card:not(.is-hidden) {
+  animation: cardIn 0.2s ease both;
+}
+
+/* No results */
+.no-results {
+  display: none;
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #9ca3af;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.no-results.visible {
+  display: block;
+}
+
+/* Responsive: collapse aside on mobile */
+@media (max-width: 768px) {
+  .page-layout {
+    flex-direction: column;
+  }
+
+  .filter-aside {
+    position: static;
+    width: 100%;
+  }
+}
+
+/* ─────────────────────────────────────────
+   COMPARE — floating bar & compare page
+───────────────────────────────────────── */
+
+/* ── Floating compare bar (shown on plan pages) ── */
+#compare-bar {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(120%);
+  z-index: 100;
+  background: var(--charcoal);
+  color: white;
+  border-radius: 16px;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  white-space: nowrap;
+}
+
+#compare-bar.visible {
+  transform: translateX(-50%) translateY(0);
+}
+
+#compare-bar-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+#compare-bar-slots {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.compare-slot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.4);
+  background: transparent;
+  transition: background 0.2s;
+}
+
+.compare-slot.filled {
+  background: white;
+  border-color: white;
+}
+
+#compare-bar-go {
+  background: var(--magenta);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+#compare-bar-go:hover {
+  background: #c01455;
+}
+
+#compare-bar-clear {
+  background: transparent;
+  color: rgba(255,255,255,0.55);
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s;
+}
+
+#compare-bar-clear:hover {
+  color: white;
+}
+
+/* ── Compare button on each plan card ── */
+.compare-btn {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: 10px;
+  border: 1.5px solid #e5e7eb;
+  background: transparent;
+  color: #6b7280;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.compare-btn:hover {
+  border-color: var(--magenta);
+  color: var(--magenta);
+}
+
+.compare-btn.selected {
+  background: var(--magenta);
+  border-color: var(--magenta);
+  color: white;
+}
+
+/* ── Compare page layout ── */
+.compare-page {
+  padding-top: calc(var(--header-height) + 2rem);
+  padding-bottom: 4rem;
+  min-height: 100vh;
+  background: var(--fog);
+}
+
+.compare-page .container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.compare-page .section-header {
+  margin-bottom: 2rem;
+}
+
+/* Empty state */
+.compare-empty {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: #9ca3af;
+}
+
+.compare-empty p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.compare-empty a {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  background: var(--magenta);
+  color: white;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: background 0.15s;
+}
+
+.compare-empty a:hover {
+  background: #c01455;
+}
+
+/* Table wrapper — horizontal scroll on small screens */
+.compare-table-wrap {
+  overflow-x: auto;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  min-width: 480px;
+}
+
+/* Header row */
+.compare-table thead th {
+  padding: 1.25rem 1rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 2px solid #f3f4f6;
+}
+
+.compare-table thead th:first-child {
+  width: 160px;
+  background: var(--fog);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #9ca3af;
+  vertical-align: middle;
+}
+
+/* Plan column header */
+.compare-plan-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.compare-plan-header .operator-badge {
+  align-self: flex-start;
+}
+
+.compare-plan-name {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+.compare-plan-price-big {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--charcoal);
+  line-height: 1;
+}
+
+.compare-plan-period {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.compare-remove-btn {
+  margin-top: 0.5rem;
+  background: transparent;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.compare-remove-btn:hover {
+  border-color: #fca5a5;
+  color: #dc2626;
+}
+
+/* Body rows */
+.compare-table tbody tr {
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.compare-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.compare-table tbody tr:hover {
+  background: #fafafa;
+}
+
+.compare-table tbody th {
+  padding: 0.85rem 1rem;
+  background: var(--fog);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #374151;
+  text-align: left;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.compare-table tbody td {
+  padding: 0.85rem 1rem;
+  font-size: 0.875rem;
+  color: #374151;
+  vertical-align: top;
+}
+
+/* Highlight best value in a row */
+.compare-table td.best-value {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.compare-table td.best-value::after {
+  content: ' ✓';
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+/* CTA row */
+.compare-cta-row td {
+  padding-top: 1rem;
+  padding-bottom: 1.25rem;
+}
+
+/* Add plan column */
+.compare-add-col {
+  min-width: 180px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.compare-add-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.25rem;
+  border: 2px dashed #e5e7eb;
+  border-radius: 12px;
+  background: transparent;
+  color: #9ca3af;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s;
+  width: 100%;
+}
+
+.compare-add-btn:hover {
+  border-color: var(--magenta);
+  color: var(--magenta);
+}
+
+.compare-add-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
