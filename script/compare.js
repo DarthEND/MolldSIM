@@ -118,6 +118,8 @@
     // Bara flotantă de comparare
     let bar = document.createElement('div');
     bar.id = 'compare-bar';
+    bar.hidden = true;
+    bar.style.display = 'none';
     bar.innerHTML =
       `<span id="compare-bar-label"></span>
       <div id="compare-bar-slots"></div>
@@ -171,7 +173,10 @@
       }
     }
 
-    bar.classList.toggle('visible', count > 0);
+    let shouldShow = count > 0;
+    bar.hidden = !shouldShow;
+    bar.style.display = shouldShow ? 'flex' : 'none';
+    bar.classList.toggle('visible', shouldShow);
   }
 
   function initComparePage() {
