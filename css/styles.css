@@ -142,6 +142,7 @@ section:nth-child(even) {
   font-weight: 600;
   cursor: pointer;
   font-size: 0.875rem;
+  text-decoration: none;
 }
 
 .hero-buttons a.btn-primary:hover {
@@ -375,8 +376,8 @@ section:nth-child(even) {
 
 .plan-price-container {
   display: flex;
-  align-items: flex-end;
-  gap: 0.25rem;
+  flex-direction: column;
+  gap: 0.1rem;
   margin-top: 0.5rem;
 }
 
@@ -384,6 +385,13 @@ section:nth-child(even) {
   font-size: 1.875rem;
   font-weight: 800;
   color: var(--charcoal);
+  line-height: 1;
+}
+
+.plan-currency {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: normal;
 }
 
 .plan-period {
@@ -409,57 +417,14 @@ section:nth-child(even) {
   margin-top: 1.5rem;
   padding: 0.5rem 1rem;
   border-radius: 12px;
-  border: none;
+  border: 1px solid transparent;
+  background-color: transparent;
   font-weight: 600;
-  /* color: var(--charcoal); */
   cursor: pointer;
   display: block;
   text-decoration: none;
   text-align: center;
-}
-
-.orange {
-  border: 1px solid var(--orange);
-  background-color: transparent;
-  color: var(--orange);
-}
-
-.orange:hover {
-  background-color: var(--orange);
-  color: white;
-}
-
-.moldcell {
-  border: 1px solid var(--moldcell);
-  background-color: transparent;
-  color: var(--moldcell);
-}
-
-.moldcell:hover {
-  background-color: var(--moldcell);
-  color: white;
-}
-
-.moldtelecom {
-  border: 1px solid var(--moldtelecom);
-  background-color: transparent;
-  color: var(--moldtelecom);
-}
-
-.moldtelecom:hover {
-  background-color: var(--moldtelecom);
-  color: white;
-}
-
-.starnet {
-  border: 1px solid var(--starnet);
-  background-color: transparent;
-  color: var(--starnet);
-}
-
-.starnet:hover {
-  background-color: var(--starnet);
-  color: white;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .plan-note {

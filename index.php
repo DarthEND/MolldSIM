@@ -1,28 +1,8 @@
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MolldSIM - Toate abonamentele într-un singur loc</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <header>
-        <div class="header-content">
-            <div class="logo-container">
-                <a href="index.html">
-                    <div class="logo-text">MolldSIM</div>
-                </a>
-            </div>
-            <nav>
-                <a href="index.html">Acasă</a>
-                <a href="pages/prepay.html">Prepay</a>
-                <a href="pages/abonament.html">Abonament</a>
-                <a href="pages/internet.html">Internet</a>
-                <a href="pages/internet-tv.html">Internet + TV</a>
-            </nav>
-        </div>
-    </header>
+<?php
+$pageTitle = 'MolldSIM - Toate abonamentele într-un singur loc';
+$basePath  = '';
+require __DIR__ . '/includes/header.php';
+?>
     <section class="hero">
         <div class="hero-content">
             <div>
@@ -35,19 +15,18 @@
                     internet și Internet + TV — simplu, clar și prietenos.
                 </p>
                 <div class="hero-buttons">
-                    <a href="pages/prepay.html" class="btn-primary btn-large">Vezi planurile</a>
+                    <a href="pages/prepay.php" class="btn-primary btn-large">Vezi planurile</a>
                     <a href="#cum-functioneaza" class="btn-outline btn-large">Cum funcționează</a>
                 </div>
             </div>
         </div>
     </section>
+
     <section id="cum-functioneaza" class="how-it-works">
         <div class="container">
             <div class="section-header">
                 <p class="kicker">Cum funcționează</p>
-                <h2 class="section-title">
-                    Trei pași simpli către abonamentul perfect
-                </h2>
+                <h2 class="section-title">Trei pași simpli către abonamentul perfect</h2>
                 <p class="section-subtitle">
                     Comparăm ofertele pentru tine, astfel încât să alegi cel mai bun
                     plan în câteva minute.
@@ -56,9 +35,7 @@
             <div class="how-it-works-grid">
                 <div class="step-card">
                     <div class="step-icon-wrapper">
-                        <div class="step-icon" style="background: linear-gradient(135deg, #e3f2fd, #bbdefb)">
-                            🔍
-                        </div>
+                        <div class="step-icon" style="background: linear-gradient(135deg, #e3f2fd, #bbdefb)">🔍</div>
                         <span class="step-number">1</span>
                     </div>
                     <h3 class="step-title">Explorează categoriile</h3>
@@ -69,9 +46,7 @@
                 </div>
                 <div class="step-card">
                     <div class="step-icon-wrapper">
-                        <div class="step-icon" style="background: linear-gradient(135deg, #f3e5f5, #e1bee7)">
-                            ⚖️
-                        </div>
+                        <div class="step-icon" style="background: linear-gradient(135deg, #f3e5f5, #e1bee7)">⚖️</div>
                         <span class="step-number">2</span>
                     </div>
                     <h3 class="step-title">Compară planurile</h3>
@@ -82,9 +57,7 @@
                 </div>
                 <div class="step-card">
                     <div class="step-icon-wrapper">
-                        <div class="step-icon" style="background: linear-gradient(135deg, #fff3e0, #ffe0b2)">
-                            ✅
-                        </div>
+                        <div class="step-icon" style="background: linear-gradient(135deg, #fff3e0, #ffe0b2)">✅</div>
                         <span class="step-number">3</span>
                     </div>
                     <h3 class="step-title">Alege și activează</h3>
@@ -96,6 +69,7 @@
             </div>
         </div>
     </section>
+
     <section id="planuri" class="how-it-works">
         <div class="container">
             <div class="section-header">
@@ -109,23 +83,23 @@
                 <div class="step-card">
                     <h3 class="step-title">Telefonie mobilă Prepay</h3>
                     <p class="step-description">
-                        Compără traficul de date, minutele și beneficiile incluse pentru planurile prepay.
+                        Compară traficul de date, minutele și beneficiile incluse pentru planurile prepay.
                     </p>
-                    <a href="pages/prepay.html" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Vezi planurile</a>
+                    <a href="pages/prepay.php" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Vezi planurile</a>
                 </div>
                 <div class="step-card">
                     <h3 class="step-title">Telefonie mobilă Abonament</h3>
                     <p class="step-description">
                         Compară traficul de date, minutele și beneficiile incluse pentru abonamente.
                     </p>
-                    <a href="pages/abonament.html" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Vezi planurile</a>
+                    <a href="pages/abonament.php" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Vezi planurile</a>
                 </div>
                 <div class="step-card">
                     <h3 class="step-title">Internet</h3>
                     <p class="step-description">
                         Stabil, rapid și la preț corect. Selectează furnizorul și vezi vitezele disponibile.
                     </p>
-                    <a href="pages/internet.html" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Vezi planurile</a>
+                    <a href="pages/internet.php" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Vezi planurile</a>
                 </div>
             </div>
             <div class="how-it-works-grid" style="margin-top: 2rem;">
@@ -134,18 +108,17 @@
                     <p class="step-description">
                         Canale și viteză pentru toată familia. Alege pachetul complet care ți se potrivește.
                     </p>
-                    <a href="pages/internet-tv.html" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Vezi planurile</a>
+                    <a href="pages/internet-tv.php" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Vezi planurile</a>
                 </div>
             </div>
         </div>
     </section>
+
     <section class="faq-container">
         <div class="section-header">
             <p class="kicker">Întrebări frecvente</p>
             <h2 class="section-title">Tot ce vrei să știi</h2>
-            <p class="section-subtitle">
-                Dacă ai altă întrebare, scrie-ne și te ajutăm rapid.
-            </p>
+            <p class="section-subtitle">Dacă ai altă întrebare, scrie-ne și te ajutăm rapid.</p>
         </div>
         <div class="faq-list">
             <details class="faq-item">
@@ -180,41 +153,7 @@
             </details>
         </div>
     </section>
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>MolldSIM</h4>
-                <p>Compară abonamente simplu și prietenos.</p>
-            </div>
-            <div class="footer-section">
-                <h4>Secțiuni</h4>
-                <ul>
-                    <li><a href="pages/prepay.html">Prepay</a></li>
-                    <li><a href="pages/abonament.html">Abonament</a></li>
-                    <li><a href="pages/internet.html">Internet</a></li>
-                    <li><a href="pages/internet-tv.html">Internet + TV</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Legal</h4>
-                <ul>
-                    <li>Termeni & condiții</li>
-                    <li>Confidențialitate</li>
-                    <li>Cookie-uri</li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Contact</h4>
-                <ul>
-                    <li>Email: contact@molldsim.md</li>
-                    <li>Telefon: +373 (xxx) xxx xxx</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            © 2025-2026 MolldSIM. Toate drepturile rezervate.
-        </div>
-    </footer>
-    <script src="script/script.js"></script>
+
+<?php require __DIR__ . '/includes/footer.php'; ?>
 </body>
 </html>

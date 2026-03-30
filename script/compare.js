@@ -123,7 +123,7 @@
     bar.innerHTML =
       `<span id="compare-bar-label"></span>
       <div id="compare-bar-slots"></div>
-      <a id="compare-bar-go" href="compare.html">Compară acum</a>
+      <a id="compare-bar-go" href="compare.php">Compară acum</a>
       <button id="compare-bar-clear">Șterge tot</button>`;
     document.body.appendChild(bar);
 
@@ -312,7 +312,7 @@
       let thAdd = document.createElement('th');
       thAdd.className = 'compare-add-col';
       thAdd.innerHTML =
-        `<a class="compare-add-btn" href="prepay.html">
+        `<a class="compare-add-btn" href="prepay.php">
           <span class="compare-add-icon">＋</span>
           Adaugă un plan
         </a>`;
