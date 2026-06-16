@@ -1,11 +1,8 @@
-AJAX_CHANGES_SUMMARY.md
 .env
 .env.example
-.codex
 .idea/
 *.log
 *.tmp
 *.bak
 Thumbs.db
 .DS_Store
-AGENTS.md
