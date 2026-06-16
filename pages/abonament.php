@@ -2,20 +2,27 @@
 $pageTitle = 'Abonament - MolldSIM';
 $basePath  = '../';
 require __DIR__ . '/../includes/header.php';
-require __DIR__ . '/../includes/plan_card.php';
-
-$plans = require __DIR__ . '/../data/abonament_plans.php';
 ?>
-    <section class="mobile-section">
+    <main id="main-content">
+    <section class="mobile-section" data-plans-page data-category="abonament" data-api="../api/plans.php">
         <div class="subsection">
             <div class="section-header" style="padding-top: calc(var(--header-height) + 1rem);">
                 <p class="kicker">Telefonie mobilă Abonament</p>
                 <h2 class="section-title">Alege operatorul, găsește planul</h2>
                 <p class="section-subtitle">Compară traficul de date, minutele și beneficiile incluse.</p>
             </div>
+            <div class="catalog-toolbar">
+                <button class="filter-drawer-toggle" type="button" aria-controls="filter-aside" aria-expanded="false">
+                    Filtre și sortare <span class="filter-active-count" hidden></span>
+                </button>
+                <span class="catalog-status" id="catalog-status" role="status" aria-live="polite"></span>
+            </div>
             <div class="page-layout">
-                <aside class="filter-aside" id="filter-aside">
-                    <h3>Filtrează</h3>
+                <aside class="filter-aside" id="filter-aside" aria-label="Filtre pentru planuri">
+                    <div class="filter-heading">
+                        <h3>Filtrează</h3>
+                        <button class="filter-drawer-close" type="button" aria-label="Închide filtrele">×</button>
+                    </div>
                     <div class="filter-group">
                         <label for="filter-sort">Sortare</label>
                         <select id="filter-sort" class="filter-select">
@@ -27,31 +34,15 @@ $plans = require __DIR__ . '/../data/abonament_plans.php';
                     </div>
                     <div class="filter-group">
                         <label>Operator</label>
-                        <div class="operator-options">
-                            <label class="operator-option">
-                                <input type="checkbox" class="operator-checkbox" value="orange" checked>
-                                <span class="op-dot" style="background:#ff7900;"></span>
-                                Orange
-                            </label>
-                            <label class="operator-option">
-                                <input type="checkbox" class="operator-checkbox" value="moldcell" checked>
-                                <span class="op-dot" style="background:#6a1b9a;"></span>
-                                Moldcell
-                            </label>
-                            <label class="operator-option">
-                                <input type="checkbox" class="operator-checkbox" value="moldtelecom" checked>
-                                <span class="op-dot" style="background:#004b93;"></span>
-                                Moldtelecom
-                            </label>
-                        </div>
+                        <div class="operator-options" id="operator-options"></div>
                     </div>
                     <div class="filter-group">
-                        <label>Preț maxim: <span id="price-label">200 MDL</span></label>
+                        <label>Preț maxim: <span id="price-label">0 MDL</span></label>
                         <div class="range-wrapper">
                             <input type="range" id="filter-price" class="filter-range"
-                                   min="95" max="200" step="5" value="200">
+                                   min="0" max="0" step="5" value="0">
                             <div class="range-labels">
-                                <span>95 MDL</span><span>200 MDL</span>
+                                <span>0 MDL</span><span>0 MDL</span>
                             </div>
                         </div>
                     </div>
@@ -65,6 +56,33 @@ $plans = require __DIR__ . '/../data/abonament_plans.php';
                             </div>
                         </div>
                     </div>
+                    <div class="filter-group">
+                        <label>Minute min: <span id="minutes-label">0 min</span></label>
+                        <div class="range-wrapper">
+                            <input type="range" id="filter-minutes" class="filter-range" min="0" max="0" step="100" value="0">
+                            <div class="range-labels">
+                                <span>0 min</span><span>0 min</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label>SMS min: <span id="sms-label">0 SMS</span></label>
+                        <div class="range-wrapper">
+                            <input type="range" id="filter-sms" class="filter-range" min="0" max="0" step="100" value="0">
+                            <div class="range-labels">
+                                <span>0 SMS</span><span>0 SMS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label>Roaming min: <span id="roaming-label">0 GB</span></label>
+                        <div class="range-wrapper">
+                            <input type="range" id="filter-roaming" class="filter-range" min="0" max="0" step="0.5" value="0">
+                            <div class="range-labels">
+                                <span>0 GB</span><span>0 GB</span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="filter-footer">
                         <span class="filter-count" id="filter-count"></span>
                         <button id="filter-reset" class="filter-reset-btn">Resetează filtrele</button>
@@ -72,9 +90,6 @@ $plans = require __DIR__ . '/../data/abonament_plans.php';
                 </aside>
                 <div class="plans-content">
                     <div class="plans-grid-all" id="plans-grid">
-                        <?php foreach ($plans as $plan): ?>
-                        <?= renderPlanCard($plan) ?>
-                        <?php endforeach; ?>
                         <div class="no-results" id="no-results">
                             Niciun plan nu corespunde filtrelor selectate.
                         </div>
@@ -83,8 +98,11 @@ $plans = require __DIR__ . '/../data/abonament_plans.php';
             </div>
         </div>
     </section>
+    </main>
+    <div class="filter-backdrop" hidden></div>
 
 <?php require __DIR__ . '/../includes/footer.php'; ?>
+    <script src="../script/recommendations.js"></script>
     <script src="../script/filter.js"></script>
     <script src="../script/compare.js?v=2"></script>
 </body>

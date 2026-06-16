@@ -1,0 +1,159 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background:
+        linear-gradient(135deg, rgba(91, 33, 182, 0.1), transparent 34%),
+        linear-gradient(315deg, rgba(214, 31, 105, 0.09), transparent 30%),
+        var(--surface-muted);
+    color: var(--charcoal);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 420px;
+    backdrop-filter: blur(18px);
+}
+
+.login-logo {
+    font-size: 1.9rem;
+    font-weight: 880;
+    color: var(--charcoal);
+    letter-spacing: -0.03em;
+}
+
+.login-logo span {
+    display: block;
+    font-size: .85rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-top: .2rem;
+    letter-spacing: 0;
+}
+
+.demo-banner {
+    background: linear-gradient(135deg, rgba(91, 33, 182, 0.08), rgba(214, 31, 105, 0.06));
+    border: 1px solid rgba(91, 33, 182, 0.14);
+    border-radius: var(--radius-md);
+    padding: .875rem 1rem;
+    margin: 1.5rem 0;
+    font-size: .875rem;
+    color: var(--graphite);
+    line-height: 1.6;
+}
+
+.demo-banner strong {
+    display: block;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    margin-bottom: .4rem;
+    color: var(--purple);
+}
+
+.demo-cred {
+    font-family: 'Courier New', monospace;
+    background: white;
+    padding: .1rem .4rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: .875rem;
+}
+
+.field {
+    margin-bottom: 1.1rem;
+}
+
+.field label {
+    display: block;
+    font-size: .875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: .4rem;
+}
+
+.field input[type="text"],
+.field input[type="password"] {
+    width: 100%;
+    min-height: 46px;
+    padding: .72rem .95rem;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color .15s, box-shadow .15s;
+    color: var(--charcoal);
+}
+
+.field input:focus {
+    border-color: var(--magenta);
+    box-shadow: var(--focus-ring);
+}
+
+.btn-login {
+    width: 100%;
+    min-height: 46px;
+    padding: .8rem;
+    background: var(--gradient-accent);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    font-weight: 780;
+    cursor: pointer;
+    margin-top: .25rem;
+    box-shadow: 0 12px 24px rgba(214, 31, 105, 0.24);
+    transition: transform .16s ease, box-shadow .16s ease, filter .16s ease;
+}
+
+.btn-login:hover {
+    transform: translateY(-1px);
+    filter: brightness(0.97);
+    box-shadow: 0 16px 30px rgba(214, 31, 105, 0.3);
+}
+
+.btn-login:active {
+    background: var(--purple);
+}
+
+.error-msg {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: var(--red);
+    border-radius: var(--radius-sm);
+    padding: .75rem 1rem;
+    margin-bottom: 1.1rem;
+    font-size: .875rem;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: .875rem;
+    color: var(--text-muted);
+}
+
+.back-link a {
+    color: var(--purple);
+    text-decoration: none;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}

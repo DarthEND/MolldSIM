@@ -2,20 +2,27 @@
 $pageTitle = 'Internet + TV - MolldSIM';
 $basePath  = '../';
 require __DIR__ . '/../includes/header.php';
-require __DIR__ . '/../includes/plan_card.php';
-
-$plans = require __DIR__ . '/../data/internet_tv_plans.php';
 ?>
-    <section class="internet-section">
+    <main id="main-content">
+    <section class="internet-section" data-plans-page data-category="internet_tv" data-api="../api/plans.php">
         <div class="subsection">
             <div class="section-header" style="padding-top: calc(var(--header-height) + 1rem);">
                 <p class="kicker">Internet + TV</p>
                 <h2 class="section-title">Internet rapid și TV pentru toată familia</h2>
                 <p class="section-subtitle">Compară pachetele combinate și alege cel mai bun raport calitate/preț.</p>
             </div>
+            <div class="catalog-toolbar">
+                <button class="filter-drawer-toggle" type="button" aria-controls="filter-aside" aria-expanded="false">
+                    Filtre și sortare <span class="filter-active-count" hidden></span>
+                </button>
+                <span class="catalog-status" id="catalog-status" role="status" aria-live="polite"></span>
+            </div>
             <div class="page-layout">
-                <aside class="filter-aside" id="filter-aside">
-                    <h3>Filtrează</h3>
+                <aside class="filter-aside" id="filter-aside" aria-label="Filtre pentru planuri">
+                    <div class="filter-heading">
+                        <h3>Filtrează</h3>
+                        <button class="filter-drawer-close" type="button" aria-label="Închide filtrele">×</button>
+                    </div>
                     <div class="filter-group">
                         <label for="filter-sort">Sortare</label>
                         <select id="filter-sort" class="filter-select">
@@ -27,31 +34,15 @@ $plans = require __DIR__ . '/../data/internet_tv_plans.php';
                     </div>
                     <div class="filter-group">
                         <label>Furnizor</label>
-                        <div class="operator-options">
-                            <label class="operator-option">
-                                <input type="checkbox" class="operator-checkbox" value="starnet" checked>
-                                <span class="op-dot" style="background:#ff6600;"></span>
-                                StarNet
-                            </label>
-                            <label class="operator-option">
-                                <input type="checkbox" class="operator-checkbox" value="moldtelecom" checked>
-                                <span class="op-dot" style="background:#004b93;"></span>
-                                Moldtelecom
-                            </label>
-                            <label class="operator-option">
-                                <input type="checkbox" class="operator-checkbox" value="orange" checked>
-                                <span class="op-dot" style="background:#ff7900;"></span>
-                                Orange
-                            </label>
-                        </div>
+                        <div class="operator-options" id="operator-options"></div>
                     </div>
                     <div class="filter-group">
-                        <label>Preț maxim: <span id="price-label">600 MDL</span></label>
+                        <label>Preț maxim: <span id="price-label">0 MDL</span></label>
                         <div class="range-wrapper">
                             <input type="range" id="filter-price" class="filter-range"
-                                   min="150" max="600" step="10" value="600">
+                                   min="0" max="0" step="10" value="0">
                             <div class="range-labels">
-                                <span>150 MDL</span><span>600 MDL</span>
+                                <span>0 MDL</span><span>0 MDL</span>
                             </div>
                         </div>
                     </div>
@@ -59,9 +50,36 @@ $plans = require __DIR__ . '/../data/internet_tv_plans.php';
                         <label>Viteză min: <span id="speed-label">0 Mbps</span></label>
                         <div class="range-wrapper">
                             <input type="range" id="filter-speed" class="filter-range"
-                                   min="0" max="2000" step="100" value="0">
+                                   min="0" max="0" step="100" value="0">
                             <div class="range-labels">
-                                <span>0 Mbps</span><span>2000+ Mbps</span>
+                                <span>0 Mbps</span><span>0 Mbps</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label>Upload min: <span id="upload-label">0 Mbps</span></label>
+                        <div class="range-wrapper">
+                            <input type="range" id="filter-upload" class="filter-range" min="0" max="0" step="100" value="0">
+                            <div class="range-labels">
+                                <span>0 Mbps</span><span>0 Mbps</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label>Canale TV min: <span id="tv-channels-label">0 canale</span></label>
+                        <div class="range-wrapper">
+                            <input type="range" id="filter-tv-channels" class="filter-range" min="0" max="0" step="10" value="0">
+                            <div class="range-labels">
+                                <span>0 canale</span><span>0 canale</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label>Canale HD min: <span id="hd-channels-label">0 HD</span></label>
+                        <div class="range-wrapper">
+                            <input type="range" id="filter-hd-channels" class="filter-range" min="0" max="0" step="10" value="0">
+                            <div class="range-labels">
+                                <span>0 HD</span><span>0 HD</span>
                             </div>
                         </div>
                     </div>
@@ -72,9 +90,6 @@ $plans = require __DIR__ . '/../data/internet_tv_plans.php';
                 </aside>
                 <div class="plans-content">
                     <div class="plans-grid-all" id="plans-grid">
-                        <?php foreach ($plans as $plan): ?>
-                        <?= renderPlanCard($plan) ?>
-                        <?php endforeach; ?>
                         <div class="no-results" id="no-results">
                             Niciun plan nu corespunde filtrelor selectate.
                         </div>
@@ -83,8 +98,11 @@ $plans = require __DIR__ . '/../data/internet_tv_plans.php';
             </div>
         </div>
     </section>
+    </main>
+    <div class="filter-backdrop" hidden></div>
 
 <?php require __DIR__ . '/../includes/footer.php'; ?>
+    <script src="../script/recommendations.js"></script>
     <script src="../script/filter.js"></script>
     <script src="../script/compare.js?v=2"></script>
 </body>
