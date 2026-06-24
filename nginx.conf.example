@@ -1,0 +1,27 @@
+server {
+    listen 80;
+    server_name YOUR_DOMAIN_HERE;
+
+    root /var/www/molldsim;
+    index index.php;
+
+    # Deny access to .env and hidden files
+    location ~ /\. {
+        deny all;
+    }
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+    }
+
+    # Custom 404
+    error_page 404 /404.php;
+
+    access_log /var/log/nginx/molldsim.access.log;
+    error_log  /var/log/nginx/molldsim.error.log;
+}
