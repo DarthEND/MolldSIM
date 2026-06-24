@@ -1,5 +1,5 @@
 -- MolldSIM database schema
--- Run via: db/setup.php
+-- Run via: mysql -u <user> -p <dbname> < db/migrate.sql
 
 CREATE TABLE IF NOT EXISTS users (
     id            INT AUTO_INCREMENT PRIMARY KEY,
@@ -103,14 +103,3 @@ CREATE TABLE IF NOT EXISTS internet_tv_plans (
     UNIQUE KEY unique_internet_tv_plan (operator_key, name)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-ALTER TABLE prepay_plans
-    ADD COLUMN IF NOT EXISTS is_recommended TINYINT(1) NOT NULL DEFAULT 0;
-
-ALTER TABLE abonament_plans
-    ADD COLUMN IF NOT EXISTS is_recommended TINYINT(1) NOT NULL DEFAULT 0;
-
-ALTER TABLE internet_plans
-    ADD COLUMN IF NOT EXISTS is_recommended TINYINT(1) NOT NULL DEFAULT 0;
-
-ALTER TABLE internet_tv_plans
-    ADD COLUMN IF NOT EXISTS is_recommended TINYINT(1) NOT NULL DEFAULT 0;
