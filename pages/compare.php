@@ -1,8 +1,8 @@
 <?php
-$pageTitle = 'Compară planuri - MolldSIM';
-$pageDescription = 'Compară până la patru planuri telecom și evidențiază rapid diferențele de preț, date și viteză.';
-$basePath  = '../';
-require __DIR__ . '/../includes/header.php';
+    $pageTitle = 'Compară planuri - MolldSIM';
+    $pageDescription = 'Compară până la patru planuri telecom și evidențiază rapid diferențele de preț, date și viteză.';
+    $basePath  = '../';
+    require __DIR__ . '/../includes/header.php';
 ?>
     <main id="main-content">
     <section class="compare-page">
@@ -23,7 +23,7 @@ require __DIR__ . '/../includes/header.php';
     </section>
     </main>
 
-<?php require __DIR__ . '/../includes/footer.php'; ?>
+    <?php require __DIR__ . '/../includes/footer.php'; ?>
     <script src="../script/compare.js?v=2"></script>
 </body>
 </html>

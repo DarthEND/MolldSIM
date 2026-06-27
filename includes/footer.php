@@ -1,9 +1,4 @@
-<?php
-/**
- * Shared footer include.
- * Expects: $basePath (string, '' for root, '../' for pages/)
- */
-?>
+<?php ?>
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -30,13 +25,13 @@
                     <li>Cookie-uri</li>
                 </ul>
             </div> -->
-            <div class="footer-section">
+            <!-- <div class="footer-section">
                 <h4>Contact</h4>
                 <ul>
                     <li>Email: contact@molldsim.md</li>
                     <li>Telefon: +373 (xxx) xxx xxx</li>
                 </ul>
-            </div>
+            </div> -->
         </div>
         <div class="footer-copyright">
             &copy; 2025-2026 MolldSIM. Toate drepturile rezervate.

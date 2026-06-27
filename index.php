@@ -1,154 +1,154 @@
 <?php
-$pageTitle = 'MolldSIM - Compară servicii telecom din Moldova';
-$pageDescription = 'Compară planuri Prepay, abonamente mobile, internet și televiziune de la operatorii din Moldova.';
-$basePath = '';
-require __DIR__ . '/includes/plan_helpers.php';
+    $pageTitle = 'MolldSIM - Compară servicii telecom din Moldova';
+    $pageDescription = 'Compară planuri Prepay, abonamente mobile, internet și televiziune de la operatorii din Moldova.';
+    $basePath = '';
+    require __DIR__ . '/includes/plan_helpers.php';
 
-function homeH($value): string
-{
-    return htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8');
-}
-
-function homeCategoryUrls(): array
-{
-    return [
-        'prepay'      => 'pages/prepay.php',
-        'abonament'   => 'pages/abonament.php',
-        'internet'    => 'pages/internet.php',
-        'internet_tv' => 'pages/internet-tv.php',
-    ];
-}
-
-function homeMaxValue(array $plans, string $key): float
-{
-    return array_reduce($plans, static function (float $max, array $plan) use ($key): float {
-        return max($max, (float) ($plan[$key] ?? 0));
-    }, 0.0);
-}
-
-function homeMinPrice(array $plans): float
-{
-    $prices = array_filter(array_map(static function (array $plan): float {
-        return (float) ($plan['price'] ?? 0);
-    }, $plans), static fn(float $price): bool => $price > 0);
-
-    return $prices ? min($prices) : 0.0;
-}
-
-function homeSpeedLabel(float $speed): string
-{
-    if ($speed >= 1000) {
-        return formatPlanNumber($speed / 1000) . ' Gbps';
+    function homeH($value): string
+    {
+        return htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8');
     }
 
-    return formatPlanNumber($speed) . ' Mbps';
-}
-
-function homePlanCountLabel(int $count): string
-{
-    return $count === 1 ? '1 plan disponibil' : "{$count} planuri disponibile";
-}
-
-function homeUnlimitedAwareValue(array $plan, string $key, float $max): float
-{
-    $value = (float) ($plan[$key] ?? 0);
-    return $value == 0.0 && $max > 0 ? $max * 1.25 : $value;
-}
-
-function homePlanScore(array $plan, string $category, array $max): float
-{
-    $price = max((float) ($plan['price'] ?? 0), 1.0);
-
-    if ($category === 'prepay' || $category === 'abonament') {
-        $benefit = homeUnlimitedAwareValue($plan, 'data_val', $max['data']) * 4
-            + homeUnlimitedAwareValue($plan, 'minutes_val', $max['minutes']) * 0.025
-            + homeUnlimitedAwareValue($plan, 'sms_val', $max['sms']) * 0.01
-            + (float) ($plan['roaming_val'] ?? 0) * 2;
-        $cost = $category === 'prepay'
-            ? $price / max((float) ($plan['period'] ?? 1), 1.0)
-            : $price;
-
-        return $benefit / $cost;
+    function homeCategoryUrls(): array
+    {
+        return [
+            'prepay'      => 'pages/prepay.php',
+            'abonament'   => 'pages/abonament.php',
+            'internet'    => 'pages/internet.php',
+            'internet_tv' => 'pages/internet-tv.php',
+        ];
     }
 
-    $benefit = (float) ($plan['speed_val'] ?? 0) * 1.2
-        + (float) ($plan['upload_speed_mbps'] ?? 0) * 0.8
-        + (float) ($plan['tv_channels'] ?? 0) * 1.5
-        + (float) ($plan['hd_channels'] ?? 0) * 2;
-
-    return $benefit / $price;
-}
-
-function homeRecommendedPlan(string $category, ?array $plans = null): ?array
-{
-    $plans = $plans ?? loadPlans($category);
-    if (!$plans) {
-        return null;
+    function homeMaxValue(array $plans, string $key): float
+    {
+        return array_reduce($plans, static function (float $max, array $plan) use ($key): float {
+            return max($max, (float) ($plan[$key] ?? 0));
+        }, 0.0);
     }
 
-    foreach ($plans as $plan) {
-        if ((int) ($plan['is_recommended'] ?? 0) === 1) {
-            return $plan;
+    function homeMinPrice(array $plans): float
+    {
+        $prices = array_filter(array_map(static function (array $plan): float {
+            return (float) ($plan['price'] ?? 0);
+        }, $plans), static fn(float $price): bool => $price > 0);
+
+        return $prices ? min($prices) : 0.0;
+    }
+
+    function homeSpeedLabel(float $speed): string
+    {
+        if ($speed >= 1000) {
+            return formatPlanNumber($speed / 1000) . ' Gbps';
+        }
+
+        return formatPlanNumber($speed) . ' Mbps';
+    }
+
+    function homePlanCountLabel(int $count): string
+    {
+        return $count === 1 ? '1 plan disponibil' : "{$count} planuri disponibile";
+    }
+
+    function homeUnlimitedAwareValue(array $plan, string $key, float $max): float
+    {
+        $value = (float) ($plan[$key] ?? 0);
+        return $value == 0.0 && $max > 0 ? $max * 1.25 : $value;
+    }
+
+    function homePlanScore(array $plan, string $category, array $max): float
+    {
+        $price = max((float) ($plan['price'] ?? 0), 1.0);
+
+        if ($category === 'prepay' || $category === 'abonament') {
+            $benefit = homeUnlimitedAwareValue($plan, 'data_val', $max['data']) * 4
+                + homeUnlimitedAwareValue($plan, 'minutes_val', $max['minutes']) * 0.025
+                + homeUnlimitedAwareValue($plan, 'sms_val', $max['sms']) * 0.01
+                + (float) ($plan['roaming_val'] ?? 0) * 2;
+            $cost = $category === 'prepay'
+                ? $price / max((float) ($plan['period'] ?? 1), 1.0)
+                : $price;
+
+            return $benefit / $cost;
+        }
+
+        $benefit = (float) ($plan['speed_val'] ?? 0) * 1.2
+            + (float) ($plan['upload_speed_mbps'] ?? 0) * 0.8
+            + (float) ($plan['tv_channels'] ?? 0) * 1.5
+            + (float) ($plan['hd_channels'] ?? 0) * 2;
+
+        return $benefit / $price;
+    }
+
+    function homeRecommendedPlan(string $category, ?array $plans = null): ?array
+    {
+        $plans = $plans ?? loadPlans($category);
+        if (!$plans) {
+            return null;
+        }
+
+        foreach ($plans as $plan) {
+            if ((int) ($plan['is_recommended'] ?? 0) === 1) {
+                return $plan;
+            }
+        }
+
+        $max = [
+            'data'    => homeMaxValue($plans, 'data_val'),
+            'minutes' => homeMaxValue($plans, 'minutes_val'),
+            'sms'     => homeMaxValue($plans, 'sms_val'),
+        ];
+
+        $best = null;
+        $bestScore = -1.0;
+        foreach ($plans as $plan) {
+            $score = homePlanScore($plan, $category, $max);
+            if ($score > $bestScore) {
+                $best = $plan;
+                $bestScore = $score;
+            }
+        }
+
+        return $best;
+    }
+
+    $categoryLabels = planCategoryLabels();
+    $categoryUrls = homeCategoryUrls();
+    $homePlansByCategory = [];
+    $categoryCounts = [];
+
+    foreach (array_keys($categoryUrls) as $category) {
+        try {
+            $homePlansByCategory[$category] = loadPlans($category);
+        } catch (Throwable $error) {
+            $homePlansByCategory[$category] = [];
+        }
+
+        $categoryCounts[$category] = count($homePlansByCategory[$category]);
+    }
+
+    $mobilePlans = array_merge($homePlansByCategory['prepay'] ?? [], $homePlansByCategory['abonament'] ?? []);
+    $internetPlans = array_merge($homePlansByCategory['internet'] ?? [], $homePlansByCategory['internet_tv'] ?? []);
+    $heroMobileMinPrice = homeMinPrice($mobilePlans);
+    $heroMaxInternetSpeed = homeMaxValue($internetPlans, 'speed_val');
+    $recommendedPlans = [];
+
+    foreach (array_keys($categoryUrls) as $category) {
+        try {
+            $plan = homeRecommendedPlan($category, $homePlansByCategory[$category]);
+            if ($plan !== null) {
+                $recommendedPlans[] = [
+                    'category' => $category,
+                    'label'    => $categoryLabels[$category],
+                    'url'      => $categoryUrls[$category],
+                    'plan'     => $plan,
+                ];
+            }
+        } catch (Throwable $error) {
+            continue;
         }
     }
 
-    $max = [
-        'data'    => homeMaxValue($plans, 'data_val'),
-        'minutes' => homeMaxValue($plans, 'minutes_val'),
-        'sms'     => homeMaxValue($plans, 'sms_val'),
-    ];
-
-    $best = null;
-    $bestScore = -1.0;
-    foreach ($plans as $plan) {
-        $score = homePlanScore($plan, $category, $max);
-        if ($score > $bestScore) {
-            $best = $plan;
-            $bestScore = $score;
-        }
-    }
-
-    return $best;
-}
-
-$categoryLabels = planCategoryLabels();
-$categoryUrls = homeCategoryUrls();
-$homePlansByCategory = [];
-$categoryCounts = [];
-
-foreach (array_keys($categoryUrls) as $category) {
-    try {
-        $homePlansByCategory[$category] = loadPlans($category);
-    } catch (Throwable $error) {
-        $homePlansByCategory[$category] = [];
-    }
-
-    $categoryCounts[$category] = count($homePlansByCategory[$category]);
-}
-
-$mobilePlans = array_merge($homePlansByCategory['prepay'] ?? [], $homePlansByCategory['abonament'] ?? []);
-$internetPlans = array_merge($homePlansByCategory['internet'] ?? [], $homePlansByCategory['internet_tv'] ?? []);
-$heroMobileMinPrice = homeMinPrice($mobilePlans);
-$heroMaxInternetSpeed = homeMaxValue($internetPlans, 'speed_val');
-$recommendedPlans = [];
-
-foreach (array_keys($categoryUrls) as $category) {
-    try {
-        $plan = homeRecommendedPlan($category, $homePlansByCategory[$category]);
-        if ($plan !== null) {
-            $recommendedPlans[] = [
-                'category' => $category,
-                'label'    => $categoryLabels[$category],
-                'url'      => $categoryUrls[$category],
-                'plan'     => $plan,
-            ];
-        }
-    } catch (Throwable $error) {
-        continue;
-    }
-}
-
-require __DIR__ . '/includes/header.php';
+    require __DIR__ . '/includes/header.php';
 ?>
 <main id="main-content">
     <section class="hero">

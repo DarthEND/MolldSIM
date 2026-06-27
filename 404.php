@@ -1,9 +1,9 @@
 <?php
-http_response_code(404);
-$pageTitle = 'Pagina nu a fost găsită - MolldSIM';
-$pageDescription = 'Pagina solicitată nu există sau a fost mutată.';
-$basePath = '';
-require __DIR__ . '/includes/header.php';
+    http_response_code(404);
+    $pageTitle = 'Pagina nu a fost găsită - MolldSIM';
+    $pageDescription = 'Pagina solicitată nu există sau a fost mutată.';
+    $basePath = '';
+    require __DIR__ . '/includes/header.php';
 ?>
 <main id="main-content" class="error-page">
     <div class="error-card">

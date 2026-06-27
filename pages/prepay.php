@@ -1,7 +1,7 @@
 <?php
-$pageTitle = 'Prepay - MolldSIM';
-$basePath  = '../';
-require __DIR__ . '/../includes/header.php';
+    $pageTitle = 'Prepay - MolldSIM';
+    $basePath  = '../';
+    require __DIR__ . '/../includes/header.php';
 ?>
     <main id="main-content">
     <section class="mobile-section" data-plans-page data-category="prepay" data-api="../api/plans.php">
@@ -101,7 +101,7 @@ require __DIR__ . '/../includes/header.php';
     </main>
     <div class="filter-backdrop" hidden></div>
 
-<?php require __DIR__ . '/../includes/footer.php'; ?>
+    <?php require __DIR__ . '/../includes/footer.php'; ?>
     <script src="../script/recommendations.js"></script>
     <script src="../script/filter.js"></script>
     <script src="../script/compare.js?v=2"></script>

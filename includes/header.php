@@ -1,18 +1,14 @@
 <?php
-/**
- * Shared header include.
- * Expects: $pageTitle (string), $basePath (string, '' for root, '../' for pages/)
- */
-$pageDescription = $pageDescription ?? 'Compară ofertele de telefonie, internet și TV din Moldova într-un singur loc.';
-$currentPage = basename($_SERVER['SCRIPT_NAME'] ?? 'index.php');
-$currentPath = str_replace('\\', '/', $_SERVER['SCRIPT_NAME'] ?? '');
+    $pageDescription = $pageDescription ?? 'Compară ofertele de telefonie, internet și TV din Moldova într-un singur loc.';
+    $currentPage = basename($_SERVER['SCRIPT_NAME'] ?? 'index.php');
+    $currentPath = str_replace('\\', '/', $_SERVER['SCRIPT_NAME'] ?? '');
 
-function navClass(string $page, string $path = ''): string
-{
-    global $currentPage, $currentPath;
-    $active = $currentPage === $page && ($path === '' || str_contains($currentPath, $path));
-    return $active ? ' class="is-active" aria-current="page"' : '';
-}
+    function navClass(string $page, string $path = ''): string
+    {
+        global $currentPage, $currentPath;
+        $active = $currentPage === $page && ($path === '' || str_contains($currentPath, $path));
+        return $active ? ' class="is-active" aria-current="page"' : '';
+    }
 ?>
 <!DOCTYPE html>
 <html lang="ro">
